@@ -1,0 +1,314 @@
+@font-face {
+    font-family: "Vazir-FD-WOL";
+    font-style: normal;
+    font-weight: normal;
+    src:  url("../fonts/Vazir-FD-WOL.woff2") format("woff2"), url("../fonts/Vazir-Bold-FD-WOL.woff") format("woff"), url("../fonts/Vazir-FD-WOL.ttf") format("truetype");
+}
+body,html {
+    text-align: right;
+    direction: rtl !important;
+    line-height: 1.5;
+    font-family: 'Vazir-FD-WOL', sans-serif;
+}
+p {
+    line-height: 1.5;
+    font-size: 15px;
+}
+h1, h2, h3, h4, h5, h6, .h1 {
+    font-family: 'Vazir-FD-WOL', sans-serif;
+}
+h1 {
+    font-weight: 700;
+}
+.rtl .text-left {
+    text-align: right !important;
+}
+.rtl .mfp-counter {
+    direction: rtl;
+}
+ul {
+    padding-right: 0;
+}
+.pill-button:before,
+.pill-button:after {
+   right: 0;
+}
+.pill-button-01 {
+    margin-right:16px;
+}
+.pill-button-01:before,
+.pill-button-01:after {
+  right: 0;
+}
+.pill-button-03 {
+    margin-right: 16px;
+}
+/******************
+    Style Arrangement
+ 1-Header 
+ 2-Hero
+ 3-About-box
+ 4- Skill
+ 5- Testimonial
+ 6- Services
+ 7- Portfolio
+ 8- Blog
+ 9- video
+ 10- Contact
+ 11- Footer
+ 12- Return-to-top
+ 13- Blog Page
+ 14- blog-single-page
+ 15- 404 Error
+ 16- Media
+
+*******************/
+/****** Header ******/
+.preloader{
+    direction: ltr;
+}
+.navbar-nav {
+    margin-left: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.navbar-nav .navbar-item{
+    margin-left: 24px;
+}
+.header .social-icons li i {
+    margin-left:14px;
+}
+.navbar-expand-lg .navbar-collapse {
+    justify-content: start;
+}
+/****** Hero ******/
+.hero .pill-button-play img{
+    margin-right:32px; 
+}
+/****** About-box ******/
+.about-description:before,
+.about-description:after {
+    right: 0;
+    left: auto;
+}
+/****** Skill ******/
+.skill-box .skillbar-title {
+    right: -17px;
+}
+.skill-box .skillbar-title span {
+    margin-right: 18px;
+}
+.skill-box .fill-skillbar {
+    float: right;
+}
+.skill-box .skill-bar-percent {
+    left: 0;
+    right: auto;
+}
+/****** Testimonial ******/
+.testimonial{
+    direction: ltr;
+}
+.gtco-testimonials .card {
+    direction: rtl;
+  }
+/****** Services ******/
+.services-icon img{
+   margin-left: 12px;
+   margin-right: 0;
+   float: right;
+}
+/****** Portfolio ******/
+#portfolio-filter a {
+    margin-left: 8px;
+    margin-right: 0;
+  
+}
+.portfolio .img-overlay-content {
+    left:-6%;
+    right: auto;
+}
+.mfp-counter {
+    left: 0;
+    direction: ltr;
+  }
+/****** Blog ******/
+.blog-content a:hover{
+    margin-right: 8px;
+}
+/****** video ******/
+.video-box-btn {
+    left: 52%;
+    right: auto;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+/****** Contact ******/
+#message.toast {
+    right: 12em;
+}
+/****** Footer ******/
+.footer-icon{
+    float: left;  
+}
+.footer-icon a{
+    margin-left:40px;
+    margin-right: 10px;
+}
+/****** Return-to-top ******/
+.return-to-top {
+    left: 15px;
+    right: auto;
+}
+/****** Inner Page******/
+/***********************/
+/****** Blog Page ******/
+.inner-page .entry-meta ul {
+    margin-bottom: 0;
+}
+.inner-page .entry-meta ul li i{
+    font-size:24px;
+    margin-right:12px;
+    padding: 12px;
+    background-color:#a6c1ee;
+    color:#fff;
+    display: flex;
+    text-align:center !important;
+    border-radius:50px;
+    float:left;
+}
+.inner-page .entry-meta ul a i:hover{
+    transform: rotate(360deg);
+    transition: 0.9s ease;
+}
+.inner-page .entry-meta ul li p{
+    float: left;
+}
+.blog-box{
+    margin-bottom: 24px;
+}
+/****** blog-single-page ******/
+.blog-single .comment-content {
+    padding-right: 60px;
+}
+.blog-single .comment-img {
+    right:10px;
+    left: auto;
+}
+
+.blog-single .comment-reply-link {
+    left: 32px;
+    right: auto;
+    transform: scaleX(-1);
+}
+.blog-single .about-description-box {
+    padding-right: 32px;
+}
+.blog-single .about-description-box p::before {
+    right: -30px;
+    left: auto;
+}
+.blog-single .search-boxes button.btn {
+    left: 6px;
+    right: auto;
+}
+.blog-single .aside-title h6 {
+    margin-left: 15px;
+}
+.blog-single .aside-item ul li span {
+    margin-right: auto;
+    margin-left: 0;
+}
+.blog-single .post-image {
+    margin-left: 16px;
+}
+.blog-single .tagcloud a {
+    margin-left: 4px;
+}
+/****** 404 Error ******/
+.search-404 form button{
+    left: 6px;
+    right: auto;
+}
+/****** media ******/
+/*******************/
+@media(max-width:1200px){
+    .footer .footer-content,.footer-icon{
+        margin-right:30px;
+    }
+    .blog-single #message.toast {
+        right: 12em;
+        left: auto;
+    }
+}
+@media(max-width:991px) {
+
+    #navbarSupportedContent button.close-menu{
+        left: 35px;
+    }
+    .navbar-nav {
+        left: 5%;
+    }
+    .count-up{
+        right: initial;
+    }
+
+    .footer .footer-content,.footer-icon{
+        margin-right:30px;
+    }
+
+    .blog-single #message.toast {
+        right: 12em;
+        left: auto;
+    }
+}
+@media(max-width: 767px) {
+    .footer .footer-content,.footer-icon{
+        margin-right:30px;
+    }
+    .blog-single #message.toast {
+        right: 12em;
+        left: auto;
+    }
+}
+@media (max-width: 576px) {
+    .footer .footer-content,.footer-icon{
+        margin-right:30px;
+    }
+    .blog-single #message.toast {
+        right: 12em;
+        left: auto;
+    }
+}
+@media (max-width: 360px) {
+    .contact-box:nth-child(2){
+        float: left;
+    }
+    .blog-single .comment-reply-link {
+        left: -10px;
+        right: auto;
+    }
+    .blog-single #message.toast {
+        right: 12em;
+        left: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

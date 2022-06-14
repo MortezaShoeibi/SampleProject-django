@@ -1,0 +1,122 @@
+/*-----------------------------------------------------------
+* Template Name    : NOLAN - Fully Responsive Personal Template
+* Author           : Toonalite Group
+* Version          : 1.0.0
+* Created          : october 2021
+* File Description : Color css file of the template
+*------------------------------------------------------------*/
+.span{
+    color:#08a66d;
+}
+.pill-button{
+    background-image: linear-gradient(to right, #96deda 0%, #93f7ac 51%, #a0ffb8  100%);
+}
+.loader span {
+    background:#08a66d;
+}
+.loader span:nth-child(2) {
+    background:#08a66d;
+} 
+.loader span:nth-child(3) {
+    background:#08a66d;
+}
+.loader span:nth-child(4) {
+    background:#08a66d;
+} 
+.loader span:nth-child(5) {
+    background:#08a66d;
+}
+.loader span:nth-child(6) {
+    background:#08a66d;
+} 
+.navbar-nav .navbar-item a:hover{
+    color: #08a66d;
+} 
+.header .social-icons li i {
+    color:#08a66d; 
+}
+.header .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+    color:#08a66d;
+}
+.about-boxes-content:before,
+.about-boxes-content:after {
+   background: #0bcf87;
+}
+.about-boxes-icon{
+    background-color:#08a66d; 
+}
+.about-list i{
+    color:#08a66d;
+}
+.count-icon{
+    color:#08a66d;
+}
+
+.skill-box .fill-skillbar {
+    background: rgba(128,230,154,1);
+    background: linear-gradient(to right, #08a66d 0%, #24d494 51%, #b9ffca  100%);
+}
+.gtco-testimonials .owl-dots span {
+    border: 2px solid #08a66d;
+}
+.gtco-testimonials .owl-dots .active span {
+    background: #08a66d;
+}
+.gtco-testimonials .card {
+    box-shadow: 0 8px 30px -7px #b8ffca;
+}
+.gtco-testimonials .card .card-img-top {
+    box-shadow: 0 8px 20px -4px #b8ffca;
+}
+.gtco-testimonials .card h5 {
+    color: #08a66d;
+}
+#portfolio-filter a:hover,
+#portfolio-filter a.active {
+    color:#08a66d;
+}
+.portfolio .img-overlay-content {
+    color:#08a66d;
+}
+.portfolio .portfolio-icon a, .portfolio .portfolio-icon button {
+    border:1px solid #08a66d;
+    color:#08a66d;
+}
+.portfolio .portfolio-icon a:hover, .portfolio .portfolio-icon button:hover {
+    background-color: #4ea965;
+}
+.blog-content a:hover{
+    background: -webkit-linear-gradient(#eee, rgb(76, 158, 96));
+    margin-left: 8px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} 
+.video-box-btn:hover {
+    box-shadow: 0 0 0 20px rgb(182, 243, 197);
+}
+.video-content h5 {
+    box-shadow: 5px 5px 40px 5px rgb(182, 243, 197);
+}
+.footer-icon a{
+    background-color:#08a66d;
+}
+.return-to-top {
+    background-color: #08a66d;
+}
+.color-switcher .pallet-button {
+    background-color:#08a66d;
+}
+.blog-single .comment-content a{
+    color:#08a66d;
+}
+.inner-page .entry-meta ul li i {
+    background-color: #08a66d
+}
+.aside-item-portfolio a {
+    color:#08a66d;
+
+}
+.footer-content a {
+    color: #08a66d;
+}

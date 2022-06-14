@@ -1,0 +1,121 @@
+/*-----------------------------------------------------------
+* Template Name    : NOLAN - Fully Responsive Personal Template
+* Author           : Toonalite Group
+* Version          : 1.0.0
+* Created          : october 2021
+* File Description : Color css file of the template
+*------------------------------------------------------------*/
+.span{
+    color:#fb912b;
+}
+.pill-button{
+    background-image: linear-gradient(to right, #fb912b 0%, #ffc3a0 51%, #faa75a 100%);
+}
+.loader span {
+    background:#fb912b;
+}
+.loader span:nth-child(2) {
+    background:#fb912b;
+} 
+.loader span:nth-child(3) {
+    background:#fb912b;
+}
+.loader span:nth-child(4) {
+    background:#fb912b;
+} 
+.loader span:nth-child(5) {
+    background:#fb912b;
+}
+.loader span:nth-child(6) {
+    background:#fb912b;
+} 
+.navbar-nav .navbar-item a:hover{
+    color: #fb912b;
+} 
+.header .social-icons li i {
+    color:#fcb97c; 
+}
+.header .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+    color:#fb912b;
+}
+.about-boxes-content:before,
+.about-boxes-content:after {
+   background: #f7b374;
+}
+.about-boxes-icon{
+    background-color:#fb912b; 
+}
+.about-list i{
+    color:#fb912b;
+}
+.count-icon{
+    color:#fb912b;
+}
+.skill-box .fill-skillbar {
+    background: rgba(251,145,43,1);
+    background: linear-gradient(90deg, #fb912b 0%, #f8af6a 51%, #f8c99d 100%);
+}
+.gtco-testimonials .owl-dots span {
+    border: 2px solid #fb912b;
+}
+.gtco-testimonials .owl-dots .active span {
+    background: #fb912b;
+}
+.gtco-testimonials .card {
+    box-shadow: 0 8px 30px -7px #f8cfa9;
+}
+.gtco-testimonials .card .card-img-top {
+    box-shadow: 0 8px 20px -4px #fdc692;
+}
+.gtco-testimonials .card h5 {
+    color: #fb912b;
+}
+#portfolio-filter a:hover,
+#portfolio-filter a.active {
+    color:#fb912b;
+}
+.portfolio .img-overlay-content {
+    color:#fb912b;
+}
+.portfolio .portfolio-icon a, .portfolio .portfolio-icon button {
+    border:1px solid #fb912b;
+    color:#fb912b;
+}
+.portfolio .portfolio-icon a:hover, .portfolio .portfolio-icon button:hover {
+    background-color: #fb912b;
+}
+.blog-content a:hover{
+    background: -webkit-linear-gradient(#eee, rgb(245, 127, 17));
+    margin-left: 8px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} 
+.video-box-btn:hover {
+    box-shadow: 0 0 0 20px rgb(250, 184, 121);
+}
+.video-content h5 {
+    box-shadow: 5px 5px 40px 5px rgb(255, 203, 155);
+}
+.footer-icon a{
+    background-color:#fb912b;
+}
+.return-to-top {
+    background-color: #fb912b;
+}
+.color-switcher .pallet-button {
+    background-color:#fb912b;
+}
+.blog-single .comment-content a{
+    color:#fb912b;
+}
+.inner-page .entry-meta ul li i {
+    background-color: #fb912b;
+}
+.aside-item-portfolio a {
+    color:#fb912b;
+
+}
+.footer-content a {
+    color: #fb912b;
+}
