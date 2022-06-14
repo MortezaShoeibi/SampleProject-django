@@ -1,0 +1,770 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Titles -->
+    <title>ali shoeibi</title>
+
+    <!-- Specific Meta -->
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Toonalite Group" />
+
+    <!--  FavIcon  -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.css' %}">
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Owl carousel Css -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <!-- Magnific Popup Css -->
+    <link rel="stylesheet" href="{% static 'css/Magnific-Popup.css' %}">
+    <!--  Custom Style CSS  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rtl.css' %}">
+     <!--  Color CSS  -->
+     <link rel="stylesheet" href="{% static 'css/color/purple.css' %}" id="option-color">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#scrollspy" data-bs-offset="70">
+<!--preloader-->
+    <div class="preloader">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+    </div>
+<!-- Header Start -->
+    <header id="header" class="header">
+        <nav id="scrollspy" class="navbar navbar-expand-lg">
+            <div class="container">
+                <h1 class="navbar-brand">
+                    <img src="{% static 'img/logo.png' %}" alt="/">
+                </h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="bi bi-list"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-pills mx-auto ">
+                        <li>
+                            <button type="button" class="close-menu d-md-none">
+                                <span class="bi bi-x-lg "> </span>
+                            </button>
+                        </li>
+                        <li class="navbar-item"><a class="nav-link active" aria-current="page" href="#hero">خانه</a></li>
+                        <li class="navbar-item"><a class="nav-link" href="#about">درباره</a></li>
+                        <li class="navbar-item"><a class="nav-link" href="#services">خدمات</a></li>
+                        <li class="navbar-item"><a class="nav-link" href="#portfolio">نمونه کارها</a></li>
+                        <li class="navbar-item"><a class="nav-link" href="#blog">بلاگ</a></li>
+                        <li class="navbar-item"><a class="nav-link" href="#contact">پل ارتباطی</a></li>
+                    </ul>
+                </div>
+                <div class="social-icons d-none d-lg-block">
+                    <ul class=" list-inline ml-lg-auto">
+                        <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+<!-- Header End  -->
+<!--hero start-->
+    <section id="hero" class="hero py-5">
+        <div class="container">    
+            <div class="row">
+                <div class="col-lg-6 col-md-6 hero-center">
+                    <div class="">
+                        <div class="hero-content">
+                            <h2><span class="span">ایده های ما</span> در پشت تمام طراحی <br> و کارهای بزرگ نمایان است<br></h2>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است 
+                            </p>
+                        </div>
+                        <div class="pill-buttons">
+                            <a href="javascript:void(0)" class="pill-button">بیشتر بدانید</a>
+                        </div>
+                    </div>
+               </div> 
+               <div class="col-lg-6 col-md-6">
+                <div class="hero-img">
+                    <img src="{% static 'img/hero-02.png' %}" alt="/">
+                </div>
+            </div>
+            </div>
+        </div>  
+    </section>
+<!--hero end-->
+<!--about boxes-->
+    <section class="about-boxes my-5">
+        <div class="container">
+            <div class="row">
+                <!--item 01-->
+                <div class="col-lg-4 col-md-6 about-boxes-content">
+                        <div class="about-description">
+                            <div class="about-boxes-icon  mx-auto">
+                                <i class="bi bi-briefcase"></i>
+                            </div>
+                            <h3>
+                                وقت شما برای من مهم است
+                            </h3>
+                        </div>
+                </div>
+                    <!--item 02-->
+                    <div class="col-lg-4 col-md-6 about-boxes-content">
+                            <div class="about-description">
+                                <div class="about-boxes-icon  mx-auto">
+                                    <i class="bi bi-lightbulb"></i>
+                                </div>
+                                <h3>
+                                    طرح شما اولویت ماست
+                                </h3>
+                            </div>
+                    </div>
+                    <!--item 03-->
+                    <div class="col-lg-4 col-md-6 about-boxes-content">
+                        <div class="about-description">
+                            <div class="about-boxes-icon  mx-auto">
+                                <i class="bi bi-alarm"></i>
+                            </div>
+                            <h3>
+                                برنامه شما راه ما را باز می کند
+                            </h3>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--about ended-->
+<!--about started-->
+    <section id="about" class="about py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 ">
+                    <div class="about-img">
+                        <img src="{% static 'img/Remote-team.gif' %}" alt="/">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="title-box">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>آنها در مورد ما چه فکر می کنند؟</h4>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="about-content">
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد </p>
+                    </div>
+                    <ul class="about-list list-inline">
+                        <li><i class="bi bi-check-circle"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
+                        <li><i class="bi bi-check-circle"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
+                        <li><i class="bi bi-check-circle"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
+                        <li><i class="bi bi-check-circle"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
+                        <li><i class="bi bi-check-circle"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--about ended-->
+<!--count up started-->
+    <section class="count-up my-5 py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div id="count-up">
+                        <div class="counted-box-01 text-center">
+                                <div class="row">
+                                    <!--item 01-->
+                                    <div class="col-lg-3 col-6 count-item">
+                                        <div class="count-icon">
+                                            <i class="bi bi-clipboard-check mb-0"></i>
+                                        </div>
+                                        <div class="count-content">
+                                            <span class="timer count-number" data-from="0" data-to="639" data-speed="5000">0</span>
+                                        </div>
+                                        <div class="count-description">
+                                            <h6>تکمیل شده</h6>
+                                        </div>
+                                    </div>
+                                    <!--item 02-->
+                                    <div class="col-lg-3 col-6 count-item">
+                                        <div class="count-icon">
+                                            <i class="bi bi-globe2 mb-0"></i>
+                                        </div>
+                                        <div class="count-content">
+                                            <span class="timer count-number" data-from="0" data-to="986" data-speed="5000">0</span>
+                                        </div>
+                                        <div class="count-description">
+                                            <h6>کشورها</h6>
+                                        </div>
+                                    </div>
+                                    <!--item 03-->
+                                    <div class="col-lg-3 col-6 count-item">
+                                        <div class="count-icon">
+                                            <i class="bi bi-emoji-smile mb-0"></i>
+                                        </div>
+                                        <div class="count-content">
+                                            <span class="timer count-number" data-from="0" data-to="789" data-speed="5000">0</span>
+                                        </div>
+                                        <div class="count-description">
+                                            <h6>رضایت</h6>
+                                        </div>
+                                    </div>
+                                    <!--item 04-->
+                                    <div class="col-lg-3 col-6 count-item">
+                                        <div class="count-icon">
+                                            <i class="bi bi-basket mb-0"></i>
+                                        </div>
+                                        <div class="count-content">
+                                            <span class="timer count-number" data-from="0" data-to="789" data-speed="5000">0</span>
+                                        </div>
+                                        <div class="count-description">
+                                            <h6>مورد فروخته شده</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                          </div>
+                    </div> 
+                </div>
+            </div>  
+        </div>
+    </section>
+<!--count up ended-->
+<!--skills started-->
+<section class="skills py-5">
+    <div class="container">
+        <div class="title-box">
+            <div class="row">
+                <div class="col-12">
+                    <h4>نظرات راجب مهارت های من؟!</h4>
+                </div>
+            </div>   
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="skills-content">
+                    <h2 class="span">کارهای چشمگیر من</h2>
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="skill-box">
+                    <div class="skillbar clearfix" data-percent="95%">
+                        <div class="skillbar-title"><span>طراح UI /Ux </span></div>
+                        <div class="skillbar-bar fill-skillbar"></div>
+                        <div class="timer-skill skill-bar-percent" data-from="0" data-to="95" data-speed="5000">95%</div>
+                    </div>
+                    <div class="skillbar clearfix " data-percent="85%">
+                        <div class="skillbar-title"><span>طراح گرافیک</span></div>
+                        <div class="skillbar-bar fill-skillbar"></div>
+                        <div class="timer-skill skill-bar-percent" data-from="0" data-to="85" data-speed="5000">85%</div>
+                    </div>
+                    <div class="skillbar clearfix" data-percent="75%">
+                        <div class="skillbar-title"><span>طراح وب</span></div>
+                        <div class="skillbar-bar fill-skillbar"></div>
+                        <div class="timer-skill skill-bar-percent" data-from="0" data-to="75" data-speed="5000">75%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</section> 
+<!--skills ended-->
+<!--testimonial started-->
+    <section class="testimonial py-5">
+        <div class="container">
+            <div class="title-box">
+                <div class="row">
+                    <div class="col-12">
+                    <h4>مردم در مورد ما چه فکری می کنند؟</h4>
+                    </div>
+                </div>   
+          </div>
+          <div class="gtco-testimonials">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+              <div>
+                <div class="card text-center"><img class="card-img-top" src="{% static 'img/client-1.jpg' %}" alt="">
+                  <div class="card-body">
+                    <h5>محمد زارع <br />
+                      <span> مدیریت پروژه </span></h5>
+                    <p class="card-text">“ لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است ” </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="card text-center"><img class="card-img-top" src="{% static 'img/client-2.jpg' %}" alt="">
+                  <div class="card-body">
+                    <h5>هلنا بردبار<br />
+                      <span> مهندس </span></h5>
+                    <p class="card-text">“ لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است  ” </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="card text-center"><img class="card-img-top" src="{% static 'img/client-3.jpg' %}" alt="">
+                  <div class="card-body">
+                    <h5>مهسا سربلند<br />
+                      <span> مدیریت پروژه </span></h5>
+                    <p class="card-text">“ لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است  ” </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="card text-center"><img class="card-img-top" src="{% static 'img/client-4.jpg' %}" alt="">
+                  <div class="card-body">
+                    <h5>فاطمه علیزاده<br />
+                      <span> مدیریت پروژه </span></h5>
+                    <p class="card-text">“لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است  ” </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    </section>
+<!--testimonial ended-->
+<!--services started-->
+    <section id="services" class="services py-5">
+        <div class="container">
+            <div class="title-box">
+                <div class="row">
+                    <div class="col-12">
+                    <h4>چه چیزی باعث رضایت مشتریان من شده است؟</h4>
+                    </div>
+                </div>   
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <!--item 01-->
+               <div class="col-12">
+                <div class="services-box">
+                    <div class="services-icon">
+                        <a href="javascript:void(0)"><img src="{% static 'img/pocket-watch.svg' %}" alt="/"></a>
+                    </div>
+                    <div class="services-content">
+                        <h5>علم داده های بزرگ</h5>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است 
+                        </p>
+                    </div>
+                </div>
+               </div>
+                <!--item 02-->
+                <div class="col-12">
+                    <div class="services-box">
+                        <div class=" services-icon">
+                            <a href="javascript:void(0)"><img src="{% static 'img/bootstrapping.svg' %}" alt="/"></a>
+                        </div>
+                        <div class="services-content">
+                            <h5>طراح وب </h5>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--item 03-->
+                <div class="col-12">
+                    <div class="services-box">
+                        <div class=" services-icon">
+                            <a href="javascript:void(0)"><img src="{% static 'img/house.svg' %}" alt="/"></a>
+                        </div>
+                        <div class="services-content">
+                            <h5>طراح وب </h5>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="services-img">
+                    <img src="{% static 'img/services.png' %}" alt="/">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <!--item 04-->
+                <div class="col-12">
+                    <div class="services-box">
+                        <div class=" services-icon">
+                            <a href="javascript:void(0)"><img src="{% static 'img/pocket-watch.svg' %}" alt="/"></a>
+                        </div>
+                        <div class="services-content">
+                            <h5>طراح وب </h5>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است 
+                            </p>
+                        </div>
+                    </div> 
+                </div> 
+                <!--item 05-->
+                <div class="col-12">
+                    <div class="services-box">
+                        <div class=" services-icon">
+                            <a href="javascript:void(0)"><img src="{% static 'img/bootstrapping.svg' %}" alt="/"></a>
+                        </div>
+                        <div class="services-content">
+                            <h5>طراح وب </h5>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--item 06-->
+                <div class="col-12">
+                    <div class="services-box">
+                        <div class="services-icon">
+                            <a href="javascript:void(0)"><img src="{% static 'img/house.svg' %}" alt="/"></a>
+                        </div>
+                        <div class="services-content">
+                            <h5>طراح وب </h5>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--services ended-->
+<!--portfolio started -->
+    <section id="portfolio" class="portfolio py-5">
+        <div class="container">
+            <div class="title-box">
+                <div class="row">
+                    <div class="col-12">
+                        <h4>چه اتفاقی در تاریخ من افتاد؟</h4>
+                    </div>
+                </div>   
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <ul id="portfolio-filter" class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="javascript:void(0)" data-filter="*" class="pill-button01 active">همه</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void(0)" data-filter=".phone" class="pill-button01">تلفن</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void(0)" data-filter=".cable" class="pill-button01">کابل</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void(0)" data-filter=".laptop" class="pill-button01">لبتاب</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="portfolio-items">
+                <div class="row">
+                    <!-- item 01 -->
+                    <div class="col-md-4 portfolio-item   phone laptop">
+                        <div class="portfolio-item-content">
+                            <img src="{% static 'img/portfolio-01.jpg' %}" alt="">
+                            <div class="img-overlay">
+                                <div class="img-overlay-content">
+                                    <h5>کابل</h5>
+                                    <div class="portfolio-icon">
+                                        <a href="portfolio-single.html"><i class="bi bi-link"></i></a>
+                                        <a href="{% static 'img/portfolio-01.jpg' %}" class="js-zoom-gallery"><i class="bi bi-zoom-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item 02 -->
+                    <div class="col-md-4 portfolio-item   cable">
+                        <div class="portfolio-item-content">
+                            <img src="{% static 'img/portfolio-05.jpg' %}" alt="">
+                            <div class="img-overlay">
+                                <div class="img-overlay-content">
+                                    <h5>تلفن</h5>
+                                    <div class="portfolio-icon">
+                                        <a href="portfolio-single.html"><i class="bi bi-link"></i></a>
+                                        <a href="{% static 'img/portfolio-05.jpg' %}" class="js-zoom-gallery"><i class="bi bi-zoom-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item 03 -->
+                    <div class="col-md-4 portfolio-item   cable phone">
+                        <div class="portfolio-item-content">
+                            <img src="{% static 'img/portfolio-02.jpg' %}" alt="">
+                            <div class="img-overlay">
+                                <div class="img-overlay-content">
+                                    <h5>تلفن</h5>
+                                    <div class="portfolio-icon">
+                                        <a href="portfolio-single.html"><i class="bi bi-link"></i></a>
+                                        <a href="{% static 'img/portfolio-02.jpg' %}" class="js-zoom-gallery"><i class="bi bi-zoom-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item 04 -->
+                    <div class="col-md-4 portfolio-item  laptop">
+                        <div class="portfolio-item-content">
+                            <img src="{% static 'img/portfolio-03.jpg' %}" alt="">
+                            <div class="img-overlay">
+                                <div class="img-overlay-content">
+                                    <h5>تلفن</h5>
+                                    <div class="portfolio-icon">
+                                        <a href="portfolio-single.html"><i class="bi bi-link"></i></a>
+                                        <a href="{% static 'img/portfolio-03.jpg' %}" class="js-zoom-gallery"><i class="bi bi-zoom-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item 05 -->
+                    <div class="col-md-4 portfolio-item  cable">
+                        <div class="portfolio-item-content">
+                            <img src="{% static 'img/portfolio-04.jpg' %}" alt="">
+                            <div class="img-overlay">
+                                <div class="img-overlay-content">
+                                    <h5>تلفن</h5>
+                                    <div class="portfolio-icon">
+                                        <a href="portfolio-single.html"><i class="bi bi-link"></i></a>
+                                        <a href="{% static 'img/portfolio-04.jpg' %}" class="js-zoom-gallery"><i class="bi bi-zoom-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="pill-buttons">
+                        <a href="portfolio.html" class="pill-button">بیشتر بدانید</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--portfolio ended-->
+<!--blog started-->
+    <section id="blog" class="blog py-5">
+        <div class="container">
+            <div class="title-box">
+                <div class="row">
+                    <div class="col-12">
+                    <h4>اخبار اخیر ما چیست؟</h4>
+                    </div>
+                </div>   
+         </div>
+        <div class="row">
+            <!--item 01-->
+            <div class="col-md-6 col-lg-4">
+                <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="{% static 'img/blog-01.png' %}" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <h4>مدیریت وبسایت </h4>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است 
+                            </p>
+                            <a href="blog-single.html"><h6> بیشتر بدانید </h6></a>
+                    </div> 
+                </div>
+            </div>
+                <!--item 02-->
+            <div class="col-md-6 col-lg-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="{% static 'img/blog-02.png' %}" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <h4>طراح UI/UX</h4>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است 
+                            </p>
+                            <a href="blog-single.html"><h6> بیشتر بدانید</h6></a>
+                        </div> 
+                    </div>
+            </div>
+                    <!--item 03-->
+            <div class="col-md-6 col-lg-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="{% static 'img/blog-03.png' %}" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <h4>طراح اپلیکیشن</h4>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است 
+                            </p>
+                            <a href="blog-single.html"><h6>بیشتر بدانید</h6></a>
+                        </div> 
+                    </div>
+            </div>
+        </div>
+        </div>
+    </section>
+<!--blog ended-->
+<!--video started-->
+    <section id="video" class="video py-5">
+        <div class="container"> 
+            <div class="title-box">
+                <div class="row">
+                    <div class="col-12">
+                    <h4>چگونه به ویدیوی رزومه خود دسترسی پیدا کنم؟</h4>
+                    </div>
+                </div>   
+         </div>
+            <div class="row text-center">
+                 <div class="col-lg-8">
+                     <div class="video-box">
+                            <div class="video-img">
+                                <img src="{% static 'img/video-img.png' %}" alt="">
+                            </div>
+                            <a href="https://www.aparat.com/video/video/embed/videohash/VNmK9/vt/frame" class="popup-vimeo js-zoom-video">
+                                <div class="video-box-btn">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </a>
+                      </div>
+                  </div>
+                  <div class="col-lg-4">
+                      <div class="video-text">
+                          <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+<!--video ended-->
+<!-- Contact Started -->
+    <section id="contact" class="contact py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="title-box">
+                        <div class="row">
+                            <div class="col-12">
+                            <h4>چگونه با ما ارتباط برقرار کنیم؟</h4>
+                            </div>
+                        </div>   
+                </div>
+                    <div class="col-md-6">
+                        <div class="my-map">
+                            <img src="{% static 'img/map.png' %}" alt="/">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <form>
+                            <div class="contact-form">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="d-block">
+                                            <input class="form-control" type="text" placeholder="*نام">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="d-block">
+                                            <input class="form-control"  placeholder="*ایمیل">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="d-block">
+                                            <textarea class="form-control" placeholder="پیام شما..." cols="5" rows="5" style="height: 145px"></textarea>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pill-buttons">
+                                <a href="javascript:void(0)" id="submit-btn" onclick="sendEmail()" class="pill-button">ارسال پیام</a>
+                            </div>
+                            <div id="message" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="4000">
+                                <div class="toast-body d-inline-block"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+<!-- Contact Ended -->
+<!-- footer started  -->
+    <footer  id="footer" class="footer mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="footer-content">
+                        <p class="mb-0"> حق نشر محفوظ است &copy; طراحی شده توسط <a href="https://toonalite.ir">گروه تونالیته</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-icon">
+                        <a href="javascript:void(0)"><i class="bi bi-github"></i></a>
+                        <a href="javascript:void(0)"><i class="bi bi-facebook"></i></a>
+                        <a href="javascript:void(0)"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!--footer ended  -->
+<!--return to top started-->
+    <a class="return-to-top" href="javascript:void(0);"><i class="bi bi-arrow-up"></i></a>
+<!--return to top ended-->
+<!-- Start Options -->
+    <div id="color-switcher" class="color-switcher">
+        <div class="text-center color-pallet hide">
+            <div class="pallet-button hide">
+                <a href="#" class="cp-toggle"><i class="bi bi-gear"></i></a>
+            </div>
+            <h6 class="text-center">انتخاب رنگ</h6>
+            <ul class="pattern">
+                <li>
+                    <a class="color1" href="#"></a>
+                </li>
+                <li>
+                    <a class="color2" href="#"></a>
+                </li>
+                <li>
+                    <a class="color3" href="#"></a>
+                </li>
+                <li>
+                    <a class="color4" href="#"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+<!-- End Options -->
+    <!--  JavaScripts  -->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <!--  Bootstrap Js  -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <!--  Typed Js  -->
+    <script src="{% static 'js/typed.js' %}"></script>
+    <!--  CountTo Js  -->
+    <script src="{% static 'js/jquery.countTo.js' %}"></script>
+    <!--  Isotope Js  -->
+    <script src="{% static 'js/isotope.package.js' %}"></script>
+    <!--  PopUp Js  -->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <!--  owl.carousel Js  -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!--  easing Js  -->
+    <script src="{% static 'js/jquery-easing-min.js' %}"></script>
+    <!--  Custom JS  -->
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>
