@@ -85,29 +85,31 @@
     </header>
 <!-- Header End  -->
 <!--hero start-->
+{% if foreword %}
     <section id="hero" class="hero py-5">
         <div class="container">    
             <div class="row">
                 <div class="col-lg-6 col-md-6 hero-center">
                     <div class="">
                         <div class="hero-content">
-                            <h2><span class="span">ایده های ما</span> در پشت تمام طراحی <br> و کارهای بزرگ نمایان است<br></h2>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است 
-                            </p>
+                            <h2><span class="span"> {{ foreword.name }} </span></h2>
+                            <h4>{{ foreword.welcome }}</h4>
+                            <p>{{ foreword.description }}</p>
                         </div>
                         <div class="pill-buttons">
-                            <a href="javascript:void(0)" class="pill-button">بیشتر بدانید</a>
+                            <a href="#about" class="nav-link pill-button">بیشتر بدانید</a>
                         </div>
                     </div>
                </div> 
                <div class="col-lg-6 col-md-6">
                 <div class="hero-img">
-                    <img src="{% static 'img/hero-02.png' %}" alt="/">
+                    <img src="{{ foreword.image.url }}" alt="/">
                 </div>
             </div>
             </div>
         </div>  
     </section>
+{% endif %}
 <!--hero end-->
 <!--about boxes-->
     <section class="about-boxes my-5">
