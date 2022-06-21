@@ -11,7 +11,33 @@ class Foreword(models.Model):
         return self.welcome
 
     class Meta:
-        verbose_name = 'پیشگفتار'
-        verbose_name_plural = 'پیشگفتار'
+        verbose_name = 'خانه'
+        verbose_name_plural = 'خانه'
 
+
+class AboutMe(models.Model):
+    image = models.ImageField(upload_to='about_me/images')
+    question = models.CharField(max_length=80)
+    text = models.TextField()
+
+    def __str__(self):
+        return f'{self.question}: -{self.text[:10]}...'
+
+    class Meta:
+        verbose_name = 'درباره من'
+        verbose_name_plural = 'درباره من'
+
+
+class CountUp(models.Model):
+    published = models.CharField(max_length=5000)
+    being_printed = models.CharField(max_length=5000)
+    sold_volume = models.CharField(max_length=5000)
+    idea = models.CharField(max_length=5000)
+
+    def __str__(self):
+        return f'published: {self.published}'
+
+    class Meta:
+        verbose_name = 'شمارشگر'
+        verbose_name_plural = 'شمارشگر'
 
