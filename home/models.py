@@ -53,3 +53,16 @@ class Target(models.Model):
     class Meta:
         verbose_name = 'هدف'
         verbose_name_plural = 'هدف'
+
+
+class BookSlider(models.Model):
+    image = models.ImageField(upload_to='book_slider/images')
+    name = models.CharField(max_length=100)
+    text = models.TextField()
+
+    def __str__(self):
+        return f'{self.name}'
+
+    class Meta:
+        verbose_name = 'اسلایدر کتابها'
+        verbose_name_plural = 'اسلایدر کتابها'
