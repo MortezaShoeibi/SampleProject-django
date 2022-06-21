@@ -214,25 +214,27 @@
 {% endif %}
 <!--count up ended-->
 <!--skills started-->
+{% if target %}
 <section class="skills py-5">
     <div class="container">
         <div class="title-box">
             <div class="row">
                 <div class="col-12">
-                    <h4>نظرات راجب مهارت های من؟!</h4>
+                    <h4>{{ target.question }}!</h4>
                 </div>
             </div>   
         </div>
         <div class="row">
             <div class="col-lg-6">
                 <div class="skills-content">
-                    <h2 class="span">کارهای چشمگیر من</h2>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+                    <h2 class="span">{{ target.title }}</h2>
+                    <p>{{ target.text }}</p>
                 </div>
             </div>
         </div>
 </div>
-</section> 
+</section>
+{% endif %}
 <!--skills ended-->
 <!--testimonial started-->
     <section class="testimonial py-5">

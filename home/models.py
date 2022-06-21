@@ -41,3 +41,15 @@ class CountUp(models.Model):
         verbose_name = 'شمارشگر'
         verbose_name_plural = 'شمارشگر'
 
+
+class Target(models.Model):
+    question = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    text = models.TextField()
+
+    def __str__(self):
+        return f'{self.question} -{self.title[:10]}...'
+
+    class Meta:
+        verbose_name = 'هدف'
+        verbose_name_plural = 'هدف'

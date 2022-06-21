@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(Foreword)
 admin.site.register(AboutMe)
 admin.site.register(CountUp)
+admin.site.register(Target)
