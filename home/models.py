@@ -66,3 +66,20 @@ class BookSlider(models.Model):
     class Meta:
         verbose_name = 'اسلایدر کتابها'
         verbose_name_plural = 'اسلایدر کتابها'
+
+
+class CulturalActivity(models.Model):
+    title = models.CharField(max_length=150)
+    activity = models.TextField()
+    image = models.ImageField(upload_to='cultural/images', null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.title}'
+
+    class Meta:
+        ordering = ('-title',)
+        verbose_name = 'فعلیت های فرهنگی'
+        verbose_name_plural = 'فعالیت های فرهنگی'
+
+
+

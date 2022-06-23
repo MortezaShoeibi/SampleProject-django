@@ -8,10 +8,13 @@ def home(request):
     count_up = CountUp.objects.last()
     target = Target.objects.last()
     books = BookSlider.objects.all()[:5]
+    activities = CulturalActivity.objects.order_by('-title')
     return render(request, 'home/index.html', {
         'foreword': foreword,
         'about_me': about_me,
         'count_up': count_up,
         'target': target,
         'books': books,
+        'activities': activities,
     })
+

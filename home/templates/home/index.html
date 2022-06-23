@@ -70,8 +70,8 @@
                     </li>
                     <li class="navbar-item"><a class="nav-link active" aria-current="page" href="#hero">خانه</a></li>
                     <li class="navbar-item"><a class="nav-link" href="#about">درباره</a></li>
-                    <li class="navbar-item"><a class="nav-link" href="#services">خدمات</a></li>
-                    <li class="navbar-item"><a class="nav-link" href="#portfolio">نمونه کارها</a></li>
+                    <li class="navbar-item"><a class="nav-link" href="#books">کتاب</a></li>
+                    <li class="navbar-item"><a class="nav-link" href="#activities">فعالیت های فرهنگی</a></li>
                     <li class="navbar-item"><a class="nav-link" href="#blog">بلاگ</a></li>
                     <li class="navbar-item"><a class="nav-link" href="#contact">پل ارتباطی</a></li>
                 </ul>
@@ -246,7 +246,7 @@
 <!--skills ended-->
 <!--testimonial started-->
 {% if books %}
-    <section class="testimonial py-5">
+    <section id="books" class="testimonial py-5">
         <div class="container">
             <div class="title-box">
                 <div class="row">
@@ -275,116 +275,77 @@
 {% endif %}
 <!--testimonial ended-->
 <!--services started-->
-<section id="services" class="services py-5">
-    <div class="container">
-        <div class="title-box">
+{% if activities %}
+    <section id="activities" class="services py-5">
+        <div class="container">
+            <div class="title-box">
+                <div class="row">
+                    <div class="col-12">
+                        <h4>فعالیت های فرهنگی؟</h4>
+                    </div>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-12">
-                    <h4>چه چیزی باعث رضایت مشتریان من شده است؟</h4>
+                <div class="col-lg-4">
+                    {% for activity in activities|slice:':3' %}
+                        <!--items-->
+                        <div class="col-12">
+                            <div class="services-box">
+                                <div class="services-icon">
+                                    <button type="button" class="btn btn-secondary" style="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                             fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16"
+                                             style="">
+                                            <path fill-rule="evenodd"
+                                                  d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>
+                                            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="services-content">
+                                    <h5>{{ activity.title }}</h5>
+                                    <p>{{ activity.activity }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% if activities.last.image %}
+                    <div class="col-lg-4">
+                        <div class="services-img">
+                            <img src="{{ activities.last.image.url }}" alt="/" class="img-thumbnail">
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="col-lg-4">
+                    {% for activity in activities|slice:'3:6' %}
+                        <!--items-->
+                        <div class="col-12">
+                            <div class="services-box">
+                                <div class="services-icon">
+                                    <button type="button" class="btn btn-secondary" style="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                             fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16"
+                                             style="">
+                                            <path fill-rule="evenodd"
+                                                  d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>
+                                            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="services-content">
+                                    <h5>{{ activity.title }}</h5>
+                                    <p>{{ activity.activity }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <!--item 01-->
-                <div class="col-12">
-                    <div class="services-box">
-                        <div class="services-icon">
-                            <a href="javascript:void(0)"><img src="{% static 'img/pocket-watch.svg' %}" alt="/"></a>
-                        </div>
-                        <div class="services-content">
-                            <h5>علم داده های بزرگ</h5>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                است
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!--item 02-->
-                <div class="col-12">
-                    <div class="services-box">
-                        <div class=" services-icon">
-                            <a href="javascript:void(0)"><img src="{% static 'img/bootstrapping.svg' %}" alt="/"></a>
-                        </div>
-                        <div class="services-content">
-                            <h5>طراح وب </h5>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                است
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!--item 03-->
-                <div class="col-12">
-                    <div class="services-box">
-                        <div class=" services-icon">
-                            <a href="javascript:void(0)"><img src="{% static 'img/house.svg' %}" alt="/"></a>
-                        </div>
-                        <div class="services-content">
-                            <h5>طراح وب </h5>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                است
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="services-img">
-                    <img src="{% static 'img/services.png' %}" alt="/">
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <!--item 04-->
-                <div class="col-12">
-                    <div class="services-box">
-                        <div class=" services-icon">
-                            <a href="javascript:void(0)"><img src="{% static 'img/pocket-watch.svg' %}" alt="/"></a>
-                        </div>
-                        <div class="services-content">
-                            <h5>طراح وب </h5>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                است
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!--item 05-->
-                <div class="col-12">
-                    <div class="services-box">
-                        <div class=" services-icon">
-                            <a href="javascript:void(0)"><img src="{% static 'img/bootstrapping.svg' %}" alt="/"></a>
-                        </div>
-                        <div class="services-content">
-                            <h5>طراح وب </h5>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                است
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!--item 06-->
-                <div class="col-12">
-                    <div class="services-box">
-                        <div class="services-icon">
-                            <a href="javascript:void(0)"><img src="{% static 'img/house.svg' %}" alt="/"></a>
-                        </div>
-                        <div class="services-content">
-                            <h5>طراح وب </h5>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                است
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+{% endif %}
 <!--services ended-->
-<!--portfolio started -->
-<!--deleted section-->
-<!--portfolio ended-->
 <!--blog started-->
 <section id="blog" class="blog py-5">
     <div class="container">
@@ -540,8 +501,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="footer-content">
-                    <p class="mb-0"> حق نشر محفوظ است &copy; طراحی شده توسط <a href="https://toonalite.ir">گروه
-                        تونالیته</a>
+                    <p class="mb-0"><a href=""></a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -559,28 +519,6 @@
 <a class="return-to-top" href="javascript:void(0);"><i class="bi bi-arrow-up"></i></a>
 <!--return to top ended-->
 <!-- Start Options -->
-<div id="color-switcher" class="color-switcher">
-    <div class="text-center color-pallet hide">
-        <div class="pallet-button hide">
-            <a href="#" class="cp-toggle"><i class="bi bi-gear"></i></a>
-        </div>
-        <h6 class="text-center">انتخاب رنگ</h6>
-        <ul class="pattern">
-            <li>
-                <a class="color1" href="#"></a>
-            </li>
-            <li>
-                <a class="color2" href="#"></a>
-            </li>
-            <li>
-                <a class="color3" href="#"></a>
-            </li>
-            <li>
-                <a class="color4" href="#"></a>
-            </li>
-        </ul>
-    </div>
-</div>
 <!-- End Options -->
 <!--  JavaScripts  -->
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
