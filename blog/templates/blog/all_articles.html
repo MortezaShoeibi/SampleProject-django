@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <!-- Basic Page Needs -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Titles -->
+    <title></title>
+
+    <!-- Specific Meta -->
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="Toonalite Group"/>
+
+    <!--  FavIcon  -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,300&display=swap"
+          rel="stylesheet">
+
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.css' %}">
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Owl carousel Css -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <!-- Magnific Popup Css -->
+    <link rel="stylesheet" href="{% static 'css/Magnific-Popup.css' %}">
+    <!--  Custom Style CSS  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rtl.css' %}">
+    <!--  Color CSS  -->
+    <link rel="stylesheet" href="{% static 'css/color/purple.css' %}" id="option-color">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#scrollspy" data-bs-offset="70">
+<!--preloader-->
+<div class="preloader">
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<!-- Header Start -->
+<header id="header" class="header">
+    <nav id="scrollspy" class="navbar navbar-expand-lg">
+        <div class="container">
+            <h1 class="navbar-brand">
+                <img src="{% static 'img/logo.png' %}" alt="/">
+            </h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="bi bi-list"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-pills mx-auto ">
+                    <li>
+                        <button type="button" class="close-menu  d-md-none">
+                            <span class="bi bi-x-lg "> </span>
+                        </button>
+                    </li>
+                    <li class="navbar-item"><a class="nav-link active" href="{% url 'home:home' %}">خانه</a></li>
+                    <li class="navbar-item"><a class="nav-link" href="#blog">بلاگ</a></li>
+                </ul>
+            </div>
+            <div class="social-icons d-none d-lg-block">
+                <ul class=" list-inline ml-lg-auto">
+                    <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-whatsapp"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Header End  -->
+<!--blog started-->
+{% if articles %}
+    <section id="blog" class="blog py-6">
+        <div class="container">
+            <div class="row">
+                {% for article in articles %}
+                    <!--item 01-->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-box">
+                            <div class="blog-img">
+                                <img src="{{ article.image.url }}" alt="/">
+                            </div>
+                            <div class="blog-content">
+                                <h4>{{ article.title }}</h4>
+                                <p>{{ article.body|truncatewords:45 }}</p>
+                                <a href="blog-single.html"><h6>بیشتر بدانید</h6></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="container">
+                    <div class="text text-center">
+
+                        {% if articles.has_other_pages %}
+                            <nav aria-label="...">
+                                <ul class="pagination justify-content-center">
+                                    {% if articles.has_previous %}
+                                        <li class=" page-item">
+                                            <a class="page-link" href="?page={{ articles.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">قبلی</a>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item  disabled">
+                                            <a class="page-link" href="#">قبلی</a>
+                                        </li>
+                                    {% endif %}
+                                    {% for i in articles.paginator.page_range %}
+
+                                        {% if articles.number == i %}
+                                            <li class="page-item active "><a class="page-link" href="?page={{ i }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">{{ i }}</a>
+                                            </li>
+                                        {% else %}
+                                            <li class="page-item"><a class="page-link" href="?page={{ i }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">{{ i }}</a></li>
+                                        {% endif %}
+
+                                    {% endfor %}
+                                    {% if articles.has_next %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ articles.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">بعدی</a>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item disabled">
+                                        <a class="page-link" href="#">بعدی</a>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+<!--blog ended-->
+<!--   footer started  -->
+<footer id="footer" class="footer py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="footer-content">
+                    <p class="mb-0"><a></a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-icon">
+                    <a href="javascript:void(0)"><i class="bi bi-github"></i></a>
+                    <a href="javascript:void(0)"><i class="bi bi-facebook"></i></a>
+                    <a href="javascript:void(0)"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--   footer ended  -->
+<!--return to top started-->
+<a class="return-to-top" href="javascript:void(0);"><i class="bi bi-arrow-up"></i></a>
+<!--return to top ended-->
+<!-- Start Options -->
+<!-- End Options -->
+
+<!--  JavaScripts  -->
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<!--  Bootstrap Js  -->
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<!--  Typed Js  -->
+<script src="{% static 'js/typed.js' %}"></script>
+<!--  CountTo Js  -->
+<script src="{% static 'js/jquery.countTo.js' %}"></script>
+<!--  Isotope Js  -->
+<script src="{% static 'js/isotope.package.js' %}"></script>
+<!--  PopUp Js  -->
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<!--  owl.carousel Js  -->
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<!--  easing Js  -->
+<script src="{% static 'js/jquery-easing-min.js' %}"></script>
+<!--  Custom JS  -->
+<script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

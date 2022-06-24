@@ -347,64 +347,37 @@
 {% endif %}
 <!--services ended-->
 <!--blog started-->
-<section id="blog" class="blog py-5">
-    <div class="container">
-        <div class="title-box">
+{% if articles %}
+    <section id="blog" class="blog py-5">
+        <div class="container">
+            <div class="title-box">
+                <div class="row">
+                    <div class="col-12">
+                        <h4>مقالات اخیر:</h4>
+                    </div>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-12">
-                    <h4>اخبار اخیر ما چیست؟</h4>
-                </div>
+                {% for article in articles|slice:'3' %}
+                    <!--item 01-->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="blog-box">
+                            <div class="blog-img">
+                                <img src="{{ article.image.url }}" alt="">
+                            </div>
+                            <div class="blog-content">
+                                <h4>{{ article.title }}</h4>
+                                <p>{{ article.body|truncatewords:45 }}</p>
+                                <a href="blog-single.html"><h6> بیشتر بدانید </h6></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <a href="{% url 'blog:all_articles' %}" class="btn pill-button">مشاهده همه</a>
             </div>
         </div>
-        <div class="row">
-            <!--item 01-->
-            <div class="col-md-6 col-lg-4">
-                <div class="blog-box">
-                    <div class="blog-img">
-                        <img src="{% static 'img/blog-01.png' %}" alt="">
-                    </div>
-                    <div class="blog-content">
-                        <h4>مدیریت وبسایت </h4>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                        </p>
-                        <a href="blog-single.html"><h6> بیشتر بدانید </h6></a>
-                    </div>
-                </div>
-            </div>
-            <!--item 02-->
-            <div class="col-md-6 col-lg-4">
-                <div class="blog-box">
-                    <div class="blog-img">
-                        <img src="{% static 'img/blog-02.png' %}" alt="">
-                    </div>
-                    <div class="blog-content">
-                        <h4>طراح UI/UX</h4>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                        </p>
-                        <a href="blog-single.html"><h6> بیشتر بدانید</h6></a>
-                    </div>
-                </div>
-            </div>
-            <!--item 03-->
-            <div class="col-md-6 col-lg-4">
-                <div class="blog-box">
-                    <div class="blog-img">
-                        <img src="{% static 'img/blog-03.png' %}" alt="">
-                    </div>
-                    <div class="blog-content">
-                        <h4>طراح اپلیکیشن</h4>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                        </p>
-                        <a href="blog-single.html"><h6>بیشتر بدانید</h6></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+{% endif %}
 <!--blog ended-->
 <!--video started-->
 <section id="video" class="video py-5">
