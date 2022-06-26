@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     # my apps
     'home.apps.HomeConfig',
     'blog.apps.BlogConfig',
+
+    # packages
+    'django_social_share',
 ]
 
 MIDDLEWARE = [

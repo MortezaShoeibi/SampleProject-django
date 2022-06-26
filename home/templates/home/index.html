@@ -368,7 +368,7 @@
                             <div class="blog-content">
                                 <h4>{{ article.title }}</h4>
                                 <p>{{ article.body|truncatewords:45 }}</p>
-                                <a href="blog-single.html"><h6> بیشتر بدانید </h6></a>
+                                <a href="{{ article.get_absolute_url }}"><h6> بیشتر بدانید </h6></a>
                             </div>
                         </div>
                     </div>
