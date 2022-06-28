@@ -21,3 +21,12 @@ def article_details(request, pk):
         parent_id = request.POST.get('parent_id')
         Comment.objects.create(name=name, email=email, body=body, article=article, parent_id=parent_id)
     return render(request, 'blog/article_details.html', {'article': article, 'recent_articles': recent_articles})
+
+
+def search(request):
+    q = request.GET.get('q')
+    articles = Article.objects.filter(title__icontains=q)
+    paginator = Paginator(articles, 6)
+    page_num = request.GET.get('page')
+    objects_list = paginator.get_page(page_num)
+    return render(request, "blog/all_articles.html", {'articles': objects_list})

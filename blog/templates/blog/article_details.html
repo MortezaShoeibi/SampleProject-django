@@ -238,10 +238,10 @@
                     <!--Search-->
                     <div class="search-boxes">
                         <div class="search">
-                            <form>
+                            <form action="{% url 'blog:search' %}">
                                 <div class="position-relative  form-group mt-0">
                                     <label class="d-block">
-                                        <input type="text" placeholder="کلمه کلیدی را وارد کنید..." name="search">
+                                        <input type="text" placeholder="کلمه کلیدی را وارد کنید..." name="q">
                                     </label>
                                     <button type="submit" class="btn">
                                         <i class="bi bi-search"></i>
@@ -261,13 +261,13 @@
                                 {% for article in recent_articles|slice:":3" %}
                                     <div class="post-list">
                                         <div class="post-image">
-                                            <a href="javascript:void(0);">
+                                            <a href="{{ article.get_absolute_url }}">
                                                 <img src="{{ article.image.url }}" alt="/">
                                             </a>
                                         </div>
                                         <div class="post-content">
                                             <h5 class="post-title">
-                                                <a href="javascript:void(0);">{{ article.title }}</a>
+                                                <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
                                             </h5>
                                             <p class="blog-date">{{ article.created_at }}</p>
                                         </div>
