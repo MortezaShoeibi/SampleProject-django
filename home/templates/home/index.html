@@ -367,7 +367,7 @@
                             </div>
                             <div class="blog-content">
                                 <h4>{{ article.title }}</h4>
-                                <p>{{ article.body|truncatewords:45 }}</p>
+                                <p>{{ article.body|safe|truncatewords:30 }}</p>
                                 <a href="{{ article.get_absolute_url }}"><h6> بیشتر بدانید </h6></a>
                             </div>
                         </div>
