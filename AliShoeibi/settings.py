@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     # packages
     'django_social_share',
+    'tinymce',
 ]
 
 MIDDLEWARE = [

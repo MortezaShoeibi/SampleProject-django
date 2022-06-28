@@ -20,6 +20,7 @@ from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tinymce/', include('tinymce.urls')),
     path('', include('home.urls')),
     path('blog/', include('blog.urls')),
 ]

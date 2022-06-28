@@ -1,11 +1,12 @@
 from django.db import models
 from django.urls import reverse
+from tinymce import models as tiny_models
 
 
 class Article(models.Model):
     image = models.ImageField(upload_to='articles/images')
     title = models.CharField(max_length=50)
-    body = models.TextField()
+    body = tiny_models.HTMLField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
