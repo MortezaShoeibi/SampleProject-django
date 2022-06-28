@@ -103,9 +103,9 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a class="nav-link" href="#comments">
                                     <i class="bi bi-chat-left-dots"></i>
-                                    <p>24نظر ثبت شده</p>
+                                    <p> {{ article.comments.all.count }} نظر ثبت شده </p>
                                 </a>
                             </li>
                         </ul>
@@ -131,75 +131,56 @@
                     </div>
                 </div>
                 <!--   Comments Start  -->
-                <div class="comments mt-5">
+                <div id="comments" class="comments mt-5">
                     <h3>نظرات</h3>
+                {% if article.comments.count == 0 or None %}
+                    <br/>
+                    <p>هنوز نظری ثبت نشده</p>
+                {% endif %}
                     <ul class="list-inline comments-list">
                         <!--  Item 01  -->
                         <li class="list-inline-item">
-                            <div class="comment-wrap">
-                                <div class="comment-img">
-                                    <img src="{% static 'img/cm.png' %}" alt="/">
-                                </div>
-                                <div class="comment-content">
-                                    <div class="comment-author">
-                                        فرهاد کهن
-                                        <p>
-                                            <a href="javascript:void(0);">24 اردیبهشت,1400 ساعت 10:45</a>
-                                        </p>
-                                    </div>
-                                    <p class="mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                                        استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و
-                                        سطرآنچنان که لازم است </p>
-                                    <a href="#" class="comment-reply-link">
-                                        <i class="bi bi-reply"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <ul class="children">
-                                <li class="list-inline-item">
+                            {% for comment in article.comments.all %}
+                                {% if comment.parent == None %}
                                     <div class="comment-wrap">
                                         <div class="comment-img">
-                                            <img src="{% static 'img/cm.png' %}" alt="/">
+                                            <img src="{% static 'img/icon-user.png' %}" alt="/">
                                         </div>
                                         <div class="comment-content">
                                             <div class="comment-author">
-                                                فرناز حیدری
+                                                {{ comment.name }}
                                                 <p>
-                                                    <a href="javascript:void(0);">24 اردیبهشت,1400 ساعت 10:45</a>
+                                                    <a href="javascript:void(0);">{{ comment.created_at }}</a>
                                                 </p>
                                             </div>
-                                            <p class="mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
-                                                با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
-                                                ستون و سطرآنچنان که لازم است </p>
-                                            <a href="#" class="comment-reply-link">
-                                                <i class="bi bi-reply"></i>
+                                            <p class="mb-0">{{ comment.body }}</p>
+                                            <a href="#send" class="comment-reply-link">
+                                                <i onclick="setValue({{ comment.id }})" class="bi bi-reply"></i>
                                             </a>
                                         </div>
                                     </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <!--  Item 02  -->
-                        <li class="list-inline-item">
-                            <div class="comment-wrap">
-                                <div class="comment-img">
-                                    <img src="{% static 'img/cm.png' %}" alt="/">
-                                </div>
-                                <div class="comment-content">
-                                    <div class="comment-author">
-                                        مهتاب کرامتی
-                                        <p class="text-muted">
-                                            <a href="javascript:void(0);">24 اردیبهشت,1400 ساعت 10:45</a>
-                                        </p>
-                                    </div>
-                                    <p class="mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                                        استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و
-                                        سطرآنچنان که لازم است </p>
-                                    <a href="javascript:void(0);" class="comment-reply-link">
-                                        <i class="bi bi-reply"></i>
-                                    </a>
-                                </div>
-                            </div>
+                                    {% for reply in comment.replies.all %}
+                                        <ul class="children">
+                                            <li class="list-inline-item">
+                                                <div class="comment-wrap">
+                                                    <div class="comment-img">
+                                                        <img src="{% static 'img/icon-user.png' %}" alt="/">
+                                                    </div>
+                                                    <div class="comment-content">
+                                                        <div class="comment-author">
+                                                            {{ reply.name }}
+                                                            <p>
+                                                                <a href="javascript:void(0);">{{ reply.created_at }}</a>
+                                                            </p>
+                                                        </div>
+                                                        <p class="mb-0">{{ reply.body }}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                         </li>
                     </ul>
                 </div>
@@ -207,36 +188,38 @@
                 <div class="contact-01">
                     <div class="contact">
                         <div class="contact-form">
-                            <h3 class="text-left mb-4">پیام بگذارید</h3>
+                            <h3 id="send" class="text-left mb-4">پیام بگذارید</h3>
                             <div class="contact-box">
                                 <div class="contact-form">
-                                    <form id="contactForm">
+                                    <form method="post" id="contactForm">
+                                        {% csrf_token %}
                                         <div class="row">
+                                            <input type="hidden" id="parent_id" name="parent_id" value="">
                                             <div class="col-lg-6 form-item">
                                                 <div class="form-group">
-                                                    <label for="name"></label><input name="name" id="name" type="text"
-                                                                                     class="form-control"
-                                                                                     placeholder="نام" required>
+                                                    <label for="name"></label>
+                                                    <input name="name" id="name" type="text" class="form-control"
+                                                           placeholder="نام" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 form-item">
                                                 <div class="form-group">
-                                                    <label for="email"></label><input name="email" id="email"
-                                                                                      class="form-control"
-                                                                                      placeholder="ایمیل" required>
+                                                    <label for="email"></label>
+                                                    <input name="email" id="email" class="form-control"
+                                                           placeholder="ایمیل" required>
                                                 </div>
                                             </div>
                                             <div class="col-12 form-item">
                                                 <div class="form-group">
-                                                    <label for="comments"></label><textarea name="comments"
-                                                                                            id="comments" rows="4"
-                                                                                            class="form-control textarea"
-                                                                                            placeholder="پیام شما..."></textarea>
+                                                    <label for="body"></label>
+                                                    <textarea name="body" id="body" rows="4"
+                                                              class="form-control textarea"
+                                                              placeholder="پیام شما..."></textarea>
                                                 </div>
                                             </div>
                                             <div class="pill-buttons">
-                                                <a href="javascript:void(0)" id="submit-btn" onclick="sendEmail()"
-                                                   class="pill-button">ارسال پیام</a>
+                                                <button type="submit" id="submit-btn" class="pill-button">ارسال پیام
+                                                </button>
                                             </div>
                                             <div id="message" class="toast" role="alert" aria-live="assertive"
                                                  aria-atomic="true" data-delay="4000">
@@ -277,18 +260,18 @@
                             <div class="post-box">
                                 {% for article in recent_articles|slice:":3" %}
                                     <div class="post-list">
-                                    <div class="post-image">
-                                        <a href="javascript:void(0);">
-                                            <img src="{{ article.image.url }}" alt="/">
-                                        </a>
+                                        <div class="post-image">
+                                            <a href="javascript:void(0);">
+                                                <img src="{{ article.image.url }}" alt="/">
+                                            </a>
+                                        </div>
+                                        <div class="post-content">
+                                            <h5 class="post-title">
+                                                <a href="javascript:void(0);">{{ article.title }}</a>
+                                            </h5>
+                                            <p class="blog-date">{{ article.created_at }}</p>
+                                        </div>
                                     </div>
-                                    <div class="post-content">
-                                        <h5 class="post-title">
-                                            <a href="javascript:void(0);">{{ article.title }}</a>
-                                        </h5>
-                                        <p class="blog-date">{{ article.created_at }}</p>
-                                    </div>
-                                </div>
                                 {% endfor %}
                             </div>
                         </div>
@@ -311,13 +294,18 @@
         </div>
     </div>
 </section>
+<script>
+    function setValue(id){
+        document.getElementById('parent_id').value = id;
+    }
+</script>
 <!-- footer started  -->
 <footer id="footer" class="footer py-4">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
                 <div class="footer-content">
-                    <p class="mb-0">  </p>
+                    <p class="mb-0"></p>
                 </div>
             </div>
             <div class="col-md-4">

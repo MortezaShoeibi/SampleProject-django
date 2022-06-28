@@ -18,3 +18,19 @@ class Article(models.Model):
         ordering = ('-created_at',)
         verbose_name = 'مقاله'
         verbose_name_plural = 'مقاله'
+
+
+class Comment(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+    body = models.TextField()
+    email = models.EmailField()
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='replies', null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.name}: {self.body[:15]}...'
+
+    class Meta:
+        verbose_name = 'نظر'
+        verbose_name_plural = 'نظرات'
