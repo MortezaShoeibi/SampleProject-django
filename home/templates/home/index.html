@@ -261,9 +261,9 @@
                         <div>
                             <div class="card text-center"><img class="card-img-top" src="{{ book.image.url }}" alt="">
                                 <div class="card-body">
-                                    <h5>{{ book.name }}</h5>
-                                    <span>  <a href="#"> مشاهده کتاب </a> </span>
-                                    <p class="card-text">“ {{ book.text|truncatewords:40 }} ” </p>
+                                    <h5>{{ book.title }}</h5>
+                                    <span>  <a href="{{ book.get_absolute_url }}"> مشاهده کتاب </a> </span>
+                                    <p class="card-text">“ {{ book.body|safe|truncatewords:15 }} ” </p>
                                 </div>
                             </div>
                         </div>
