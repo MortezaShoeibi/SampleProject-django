@@ -12,6 +12,7 @@ def home(request):
     books = Book.objects.order_by('-created_at')[:5]
     activities = CulturalActivity.objects.order_by('-title')
     articles = Article.objects.order_by('-created_at')
+    video = Video.objects.last()
     return render(request, 'home/index.html', {
         'foreword': foreword,
         'about_me': about_me,
@@ -19,5 +20,6 @@ def home(request):
         'target': target,
         'books': books,
         'activities': activities,
-        'articles': articles
+        'articles': articles,
+        'video': video,
     })

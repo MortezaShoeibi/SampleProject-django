@@ -67,3 +67,17 @@ class CulturalActivity(models.Model):
         ordering = ('-title',)
         verbose_name = 'فعلیت های فرهنگی'
         verbose_name_plural = 'فعالیت های فرهنگی'
+
+
+class Video(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='images/Video')
+    url = models.URLField()
+    description = models.TextField()
+
+    def __str__(self):
+        return f'{self.title}'
+
+    class Meta:
+        verbose_name = 'ویدیو'
+        verbose_name_plural = 'ویدیو'
