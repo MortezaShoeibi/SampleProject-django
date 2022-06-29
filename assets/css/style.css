@@ -1435,6 +1435,8 @@ form{
   
 }
 
-
+p.details {
+    word-break: break-word;
+}
 
 

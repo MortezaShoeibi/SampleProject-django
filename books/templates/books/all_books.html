@@ -68,7 +68,7 @@
                         </button>
                     </li>
                     <li class="navbar-item"><a class="nav-link active" href="{% url 'home:home' %}">خانه</a></li>
-                    <li class="navbar-item"><a class="nav-link" href="#blog">بلاگ</a></li>
+                    <li class="navbar-item"><a class="nav-link" href="#books">کتاب ها</a></li>
                 </ul>
             </div>
             <div class="social-icons d-none d-lg-block">
@@ -83,21 +83,21 @@
 </header>
 <!-- Header End  -->
 <!--blog started-->
-{% if articles %}
-    <section id="blog" class="blog py-6">
+{% if books %}
+    <section id="books" class="blog py-6">
         <div class="container">
             <div class="row">
-                {% for article in articles %}
+                {% for book in books %}
                     <!--item 01-->
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-box">
                             <div class="blog-img">
-                                <img src="{{ article.image.url }}" alt="/">
+                                <img src="{{ book.image.url }}" alt="/">
                             </div>
                             <div class="blog-content">
-                                <h4>{{ article.title }}</h4>
-                                <p class="details">{{ article.body|safe|truncatewords:30 }}</p>
-                                <a href="{{ article.get_absolute_url }}"><h6>بیشتر بدانید</h6></a>
+                                <h4>{{ book.title }}</h4>
+                                <p class="details">{{ book.body|safe|truncatewords:30 }}</p>
+                                <a href="{{ book.get_absolute_url }}"><h6>بیشتر بدانید</h6></a>
                             </div>
                         </div>
                     </div>
@@ -105,21 +105,21 @@
                 <div class="container">
                     <div class="text text-center">
 
-                        {% if articles.has_other_pages %}
+                        {% if books.has_other_pages %}
                             <nav aria-label="...">
                                 <ul class="pagination justify-content-center">
-                                    {% if articles.has_previous %}
+                                    {% if books.has_previous %}
                                         <li class=" page-item">
-                                            <a class="page-link" href="?page={{ articles.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">قبلی</a>
+                                            <a class="page-link" href="?page={{ books.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">قبلی</a>
                                         </li>
                                     {% else %}
                                         <li class="page-item  disabled">
                                             <a class="page-link" href="#">قبلی</a>
                                         </li>
                                     {% endif %}
-                                    {% for i in articles.paginator.page_range %}
+                                    {% for i in books.paginator.page_range %}
 
-                                        {% if articles.number == i %}
+                                        {% if books.number == i %}
                                             <li class="page-item active "><a class="page-link" href="?page={{ i }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">{{ i }}</a>
                                             </li>
                                         {% else %}
@@ -127,9 +127,9 @@
                                         {% endif %}
 
                                     {% endfor %}
-                                    {% if articles.has_next %}
+                                    {% if books.has_next %}
                                         <li class="page-item">
-                                            <a class="page-link" href="?page={{ articles.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">بعدی</a>
+                                            <a class="page-link" href="?page={{ books.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">بعدی</a>
                                         </li>
                                     {% else %}
                                         <li class="page-item disabled">
@@ -148,7 +148,7 @@
         <div class="text text-center">
             <br/>
             <br/>
-            <h3>هنوز مقاله ای نیست</h3>
+            <h3>هنوز کتابی نیست</h3>
             <br/>
             <br/>
         </div>

@@ -1,5 +1,14 @@
 from django.shortcuts import render, get_object_or_404
 from .models import *
+from django.core.paginator import Paginator
+
+
+def all_books(request):
+    objects_list = Book.objects.order_by('-created_at')
+    paginator = Paginator(objects_list, 3)
+    page_num = request.GET.get('page')
+    books = paginator.get_page(page_num)
+    return render(request, 'books/all_books.html', {'books': books})
 
 
 def book_details(request, pk):

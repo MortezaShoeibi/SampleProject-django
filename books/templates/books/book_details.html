@@ -73,7 +73,7 @@
                         </button>
                     </li>
                     <li class="navbar-item"><a class="nav-link active" href="{% url 'home:home' %}">خانه</a></li>
-                    <li class="navbar-item"><a class="nav-link" href="#">بلاگ</a></li>
+                    <li class="navbar-item"><a class="nav-link" href="{% url 'books:all_books' %}">کتاب ها</a></li>
                 </ul>
             </div>
             <div class="social-icons d-none d-lg-block">
@@ -255,7 +255,7 @@
                         <!-- Recent Post -->
                         <div class="aside-box">
                             <div class="aside-title">
-                                <h6>آخرین مقالات:</h6>
+                                <h6>آخرین کتاب ها:</h6>
                             </div>
                             <div class="post-box">
                                 {% for book in recent_books|slice:":3" %}
