@@ -142,8 +142,8 @@
                         <p>{{ about_me.text }}</p>
                     </div>
                     <ul class="about-list list-inline">
-                        <li><i class="bi bi-check-circle"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
-                        </li>
+                        <li><i class="bi bi-check-circle"></i><a style="color: black" href="{% url 'books:all_books' %}"> کتاب ها </a></li>
+                        <li><i class="bi bi-check-circle"></i><a style="color: black" href="{% url 'blog:all_articles' %}"> مقالات </a></li>
                     </ul>
                 </div>
             </div>
@@ -251,7 +251,7 @@
             <div class="title-box">
                 <div class="row">
                     <div class="col-12">
-                        <a style="color: black" href="{% url 'books:all_books' %}"><h4>:آثار</h4></a>
+                        <a style="color: black" href="{% url 'books:all_books' %}"><h4>: مشاهده آثار</h4></a>
                     </div>
                 </div>
             </div>
