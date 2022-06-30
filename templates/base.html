@@ -27,10 +27,13 @@
 
             <div class="social-icons d-none d-lg-block">
                 <ul class=" list-inline ml-lg-auto">
-                    <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-instagram"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-whatsapp"></i></a>
-                    </li>
+                    {% for social in socials|slice:":3" %}
+                        {% if social.title == 'eitaa' %}
+                            <li class="list-inline-item"><a href="{{ social.url }}"><img style="width: 26px; position: relative; top: -4px" src="{% static 'img/eitaa-icon2.png' %}" alt=""></a></li>
+                        {% else %}
+                        <li class="list-inline-item"><a href="{{ social.url }}"><i class="bi bi-{{ social.title }}"></i></a></li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
         </div>
