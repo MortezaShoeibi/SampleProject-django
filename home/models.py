@@ -95,3 +95,15 @@ class ContactUs(models.Model):
     class Meta:
         verbose_name = 'پیام'
         verbose_name_plural = 'پیام ها'
+
+
+class Social(models.Model):
+    title = models.CharField(max_length=250, primary_key=True)
+    url = models.URLField(max_length=1000)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'شبکه های اجتماعی'
+        verbose_name_plural = 'شبکه های اجتماعی'

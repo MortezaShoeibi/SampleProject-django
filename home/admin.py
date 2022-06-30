@@ -9,4 +9,5 @@ admin.site.register(Target)
 admin.site.register(CulturalActivity)
 admin.site.register(Video)
 admin.site.register(ContactUs)
+admin.site.register(Social)
 
