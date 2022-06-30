@@ -1,346 +1,237 @@
+{% extends 'base.html' %}
 {% load static %}
 {% load social_share %}
 
-<!DOCTYPE html>
-<html lang="zxx">
-
-<head>
-
-    <!-- Basic Page Needs -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Titles -->
-    <title> Ali Shoeibi | {{ article.title }} </title>
-
-    <!-- Specific Meta -->
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-    <meta name="author" content="Toonalite Group"/>
-
-    <!--  FavIcon  -->
-    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,300&display=swap"
-          rel="stylesheet">
-
-    <!-- Bootstrap Css -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.css' %}">
-    <!-- Bootstrap icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <!-- Owl carousel Css -->
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <!-- Magnific Popup Css -->
-    <link rel="stylesheet" href="{% static 'css/Magnific-Popup.css' %}">
-    <!--  Custom Style CSS  -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/rtl.css' %}">
-    <!--  Color CSS  -->
-    <link rel="stylesheet" href="{% static 'css/color/purple.css' %}" id="option-color">
-</head>
-<body data-bs-spy="scroll" data-bs-target="#scrollspy" data-bs-offset="70">
-<!--preloader-->
-<div class="preloader">
-    <div class="loader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
+{% block title %}
+    Ali Shoeibi | {{ article.title }}
+{% endblock %}
 <!-- Header Started -->
 <!-- Header Start -->
-<header id="header" class="header">
-    <nav id="scrollspy" class="navbar navbar-expand-lg">
-        <div class="container">
-            <h1 class="navbar-brand">
-                <img src="{% static 'img/logo.png' %}" alt="/">
-            </h1>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="bi bi-list"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-pills mx-auto ">
-                    <li>
-                        <button type="button" class="close-menu  d-md-none">
-                            <span class="bi bi-x-lg "> </span>
-                        </button>
-                    </li>
-                    <li class="navbar-item"><a class="nav-link active" href="{% url 'home:home' %}">خانه</a></li>
-                    <li class="navbar-item"><a class="nav-link" href="{% url 'blog:all_articles' %}">بلاگ</a></li>
-                </ul>
-            </div>
-            <div class="social-icons d-none d-lg-block">
-                <ul class=" list-inline ml-lg-auto">
-                    <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-instagram"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-whatsapp"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+{% block nav_bar %}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav nav-pills mx-auto ">
+            <li>
+                <button type="button" class="close-menu  d-md-none">
+                    <span class="bi bi-x-lg "> </span>
+                </button>
+            </li>
+            <li class="navbar-item"><a class="nav-link active" href="{% url 'home:home' %}">خانه</a></li>
+            <li class="navbar-item"><a class="nav-link" href="{% url 'blog:all_articles' %}">بلاگ</a></li>
+        </ul>
+    </div>
+{% endblock %}
 <!-- Header End  -->
 <!--  Hero Started -->
-<section id="home" class="inner-page py-4">
-    <div class="home-content">
+{% block content %}
+    <section id="home" class="inner-page py-4">
+        <div class="home-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12">
+                        <h2 class="header-title">{{ article.title }}</h2>
+                        <div class="entry-meta">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#">
+                                        <i class="bi bi-calendar"></i>
+                                        <p>{{ article.created_at }}</p>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="nav-link" href="#comments">
+                                        <i class="bi bi-chat-left-dots"></i>
+                                        <p> {{ article.comments.all.count }} نظر ثبت شده </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Ended -->
+    <!-- blog Single Started -->
+    <section class="blog-single py-5" id="blog">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-sm-12">
-                    <h2 class="header-title">{{ article.title }}</h2>
-                    <div class="entry-meta">
-                        <ul class="list-inline">
+            <div class="row row-sticky">
+                <div class="col-lg-8 post-content">
+                    <div class="single-post">
+                        <div class="entry-image">
+                            <img src="{{ article.image.url }}" alt="/">
+                        </div>
+                        <div class="entry-content">
+                            <h3>{{ article.title }}</h3>
+                            <p class="mb-0">{{ article.body|safe }}</p>
+                        </div>
+                    </div>
+                    <!--   Comments Start  -->
+                    <div id="comments" class="comments mt-5">
+                        <h3>نظرات</h3>
+                        {% if article.comments.count == 0 or None %}
+                            <br/>
+                            <p>هنوز نظری ثبت نشده</p>
+                        {% endif %}
+                        <ul class="list-inline comments-list">
+                            <!--  Item 01  -->
                             <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="bi bi-calendar"></i>
-                                    <p>{{ article.created_at }}</p>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="nav-link" href="#comments">
-                                    <i class="bi bi-chat-left-dots"></i>
-                                    <p> {{ article.comments.all.count }} نظر ثبت شده </p>
-                                </a>
+                                {% for comment in article.comments.all %}
+                                    {% if comment.parent == None %}
+                                        <div class="comment-wrap">
+                                            <div class="comment-img">
+                                                <img src="{% static 'img/icon-user.png' %}" alt="/">
+                                            </div>
+                                            <div class="comment-content">
+                                                <div class="comment-author">
+                                                    {{ comment.name }}
+                                                    <p>
+                                                        <a href="javascript:void(0);">{{ comment.created_at }}</a>
+                                                    </p>
+                                                </div>
+                                                <p class="mb-0">{{ comment.body }}</p>
+                                                <a href="#send" class="comment-reply-link">
+                                                    <i onclick="setValue({{ comment.id }})" class="bi bi-reply"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        {% for reply in comment.replies.all %}
+                                            <ul class="children">
+                                                <li class="list-inline-item">
+                                                    <div class="comment-wrap">
+                                                        <div class="comment-img">
+                                                            <img src="{% static 'img/icon-user.png' %}" alt="/">
+                                                        </div>
+                                                        <div class="comment-content">
+                                                            <div class="comment-author">
+                                                                {{ reply.name }}
+                                                                <p>
+                                                                    <a href="javascript:void(0);">{{ reply.created_at }}</a>
+                                                                </p>
+                                                            </div>
+                                                            <p class="mb-0">{{ reply.body }}</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
                             </li>
                         </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Hero Ended -->
-<!-- blog Single Started -->
-<section class="blog-single py-5" id="blog">
-    <div class="container">
-        <div class="row row-sticky">
-            <div class="col-lg-8 post-content">
-                <div class="single-post">
-                    <div class="entry-image">
-                        <img src="{{ article.image.url }}" alt="/">
-                    </div>
-                    <div class="entry-content">
-                        <h3>{{ article.title }}</h3>
-                        <p class="mb-0">{{ article.body|safe }}</p>
-                    </div>
-                </div>
-                <!--   Comments Start  -->
-                <div id="comments" class="comments mt-5">
-                    <h3>نظرات</h3>
-                {% if article.comments.count == 0 or None %}
-                    <br/>
-                    <p>هنوز نظری ثبت نشده</p>
-                {% endif %}
-                    <ul class="list-inline comments-list">
-                        <!--  Item 01  -->
-                        <li class="list-inline-item">
-                            {% for comment in article.comments.all %}
-                                {% if comment.parent == None %}
-                                    <div class="comment-wrap">
-                                        <div class="comment-img">
-                                            <img src="{% static 'img/icon-user.png' %}" alt="/">
-                                        </div>
-                                        <div class="comment-content">
-                                            <div class="comment-author">
-                                                {{ comment.name }}
-                                                <p>
-                                                    <a href="javascript:void(0);">{{ comment.created_at }}</a>
-                                                </p>
-                                            </div>
-                                            <p class="mb-0">{{ comment.body }}</p>
-                                            <a href="#send" class="comment-reply-link">
-                                                <i onclick="setValue({{ comment.id }})" class="bi bi-reply"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    {% for reply in comment.replies.all %}
-                                        <ul class="children">
-                                            <li class="list-inline-item">
-                                                <div class="comment-wrap">
-                                                    <div class="comment-img">
-                                                        <img src="{% static 'img/icon-user.png' %}" alt="/">
-                                                    </div>
-                                                    <div class="comment-content">
-                                                        <div class="comment-author">
-                                                            {{ reply.name }}
-                                                            <p>
-                                                                <a href="javascript:void(0);">{{ reply.created_at }}</a>
-                                                            </p>
-                                                        </div>
-                                                        <p class="mb-0">{{ reply.body }}</p>
+                    <!--Blog Reply-->
+                    <div class="contact-01">
+                        <div class="contact">
+                            <div class="contact-form">
+                                <h3 id="send" class="text-left mb-4">پیام بگذارید</h3>
+                                <div class="contact-box">
+                                    <div class="contact-form">
+                                        <form method="post" id="contactForm">
+                                            {% csrf_token %}
+                                            <div class="row">
+                                                <input type="hidden" id="parent_id" name="parent_id" value="">
+                                                <div class="col-lg-6 form-item">
+                                                    <div class="form-group">
+                                                        <label for="name"></label>
+                                                        <input name="name" id="name" type="text" class="form-control"
+                                                               placeholder="نام" required>
                                                     </div>
                                                 </div>
-                                            </li>
-                                        </ul>
+                                                <div class="col-lg-6 form-item">
+                                                    <div class="form-group">
+                                                        <label for="email"></label>
+                                                        <input name="email" id="email" class="form-control"
+                                                               placeholder="ایمیل" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 form-item">
+                                                    <div class="form-group">
+                                                        <label for="body"></label>
+                                                        <textarea name="body" id="body" rows="4"
+                                                                  class="form-control textarea"
+                                                                  placeholder="پیام شما..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="pill-buttons">
+                                                    <button type="submit" id="submit-btn" class="pill-button">ارسال پیام
+                                                    </button>
+                                                </div>
+                                                <div id="message" class="toast" role="alert" aria-live="assertive"
+                                                     aria-atomic="true" data-delay="4000">
+                                                    <div class="toast-body d-inline-block"></div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <aside class="col-lg-4 sidebar col-sticky">
+                    <div class="sidebar-wrapper">
+                        <!--Search-->
+                        <div class="search-boxes">
+                            <div class="search">
+                                <form action="{% url 'blog:search' %}">
+                                    <div class="position-relative  form-group mt-0">
+                                        <label class="d-block">
+                                            <input type="text" placeholder="جستجوی مقاله..." name="q">
+                                        </label>
+                                        <button type="submit" class="btn">
+                                            <i class="bi bi-search"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="aside-contents">
+                            <!-- Categories -->
+                            <!-- Recent Post -->
+                            <div class="aside-box">
+                                <div class="aside-title">
+                                    <h6>آخرین مقالات:</h6>
+                                </div>
+                                <div class="post-box">
+                                    {% for article in recent_articles|slice:":3" %}
+                                        <div class="post-list">
+                                            <div class="post-image">
+                                                <a href="{{ article.get_absolute_url }}">
+                                                    <img src="{{ article.image.url }}" alt="/">
+                                                </a>
+                                            </div>
+                                            <div class="post-content">
+                                                <h5 class="post-title">
+                                                    <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+                                                </h5>
+                                                <p class="blog-date">{{ article.created_at }}</p>
+                                            </div>
+                                        </div>
                                     {% endfor %}
-                                {% endif %}
-                            {% endfor %}
-                        </li>
-                    </ul>
-                </div>
-                <!--Blog Reply-->
-                <div class="contact-01">
-                    <div class="contact">
-                        <div class="contact-form">
-                            <h3 id="send" class="text-left mb-4">پیام بگذارید</h3>
-                            <div class="contact-box">
-                                <div class="contact-form">
-                                    <form method="post" id="contactForm">
-                                        {% csrf_token %}
-                                        <div class="row">
-                                            <input type="hidden" id="parent_id" name="parent_id" value="">
-                                            <div class="col-lg-6 form-item">
-                                                <div class="form-group">
-                                                    <label for="name"></label>
-                                                    <input name="name" id="name" type="text" class="form-control"
-                                                           placeholder="نام" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 form-item">
-                                                <div class="form-group">
-                                                    <label for="email"></label>
-                                                    <input name="email" id="email" class="form-control"
-                                                           placeholder="ایمیل" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 form-item">
-                                                <div class="form-group">
-                                                    <label for="body"></label>
-                                                    <textarea name="body" id="body" rows="4"
-                                                              class="form-control textarea"
-                                                              placeholder="پیام شما..."></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="pill-buttons">
-                                                <button type="submit" id="submit-btn" class="pill-button">ارسال پیام
-                                                </button>
-                                            </div>
-                                            <div id="message" class="toast" role="alert" aria-live="assertive"
-                                                 aria-atomic="true" data-delay="4000">
-                                                <div class="toast-body d-inline-block"></div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                </div>
+                            </div>
+                            <!-- Archive -->
+                            <!-- Gallery -->
+                            <!-- Tags -->
+                            <div class="aside-box pb-6">
+                                <div class="aside-title">
+                                    <h6>به اشتراک گذاری:</h6>
+                                </div>
+                                <div class="tagcloud">
+                                    <a>{% post_to_whatsapp article.get_absolute_url "واتساپ" %}</a>
+                                    <a>{% post_to_twitter "مقاله جدید: {{article.title}}.همین حالا ببینید!" article.get_absolute_url "توییتر" %}</a>
+                                    <a>{% post_to_telegram "مقاله جدید: {{article.title}}" article.get_absolute_url "تلگرام" %}</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <aside class="col-lg-4 sidebar col-sticky">
-                <div class="sidebar-wrapper">
-                    <!--Search-->
-                    <div class="search-boxes">
-                        <div class="search">
-                            <form action="{% url 'blog:search' %}">
-                                <div class="position-relative  form-group mt-0">
-                                    <label class="d-block">
-                                        <input type="text" placeholder="جستجوی مقاله..." name="q">
-                                    </label>
-                                    <button type="submit" class="btn">
-                                        <i class="bi bi-search"></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="aside-contents">
-                        <!-- Categories -->
-                        <!-- Recent Post -->
-                        <div class="aside-box">
-                            <div class="aside-title">
-                                <h6>آخرین مقالات:</h6>
-                            </div>
-                            <div class="post-box">
-                                {% for article in recent_articles|slice:":3" %}
-                                    <div class="post-list">
-                                        <div class="post-image">
-                                            <a href="{{ article.get_absolute_url }}">
-                                                <img src="{{ article.image.url }}" alt="/">
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <h5 class="post-title">
-                                                <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
-                                            </h5>
-                                            <p class="blog-date">{{ article.created_at }}</p>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        <!-- Archive -->
-                        <!-- Gallery -->
-                        <!-- Tags -->
-                        <div class="aside-box pb-6">
-                            <div class="aside-title">
-                                <h6>به اشتراک گذاری:</h6>
-                            </div>
-                            <div class="tagcloud">
-                                <a>{% post_to_whatsapp article.get_absolute_url "واتساپ" %}</a>
-                                <a>{% post_to_twitter "مقاله جدید: {{article.title}}.همین حالا ببینید!" article.get_absolute_url "توییتر" %}</a>
-                                <a>{% post_to_telegram "مقاله جدید: {{article.title}}" article.get_absolute_url "تلگرام" %}</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </div>
-    </div>
-</section>
-<script>
-    function setValue(id){
-        document.getElementById('parent_id').value = id;
-    }
-</script>
-<!-- footer started  -->
-<footer id="footer" class="footer py-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="footer-content">
-                    <p class="mb-0"></p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="footer-icon">
-                    <a href="javascript:void(0)"><i class="bi bi-github"></i></a>
-                    <a href="javascript:void(0)"><i class="bi bi-facebook"></i></a>
-                    <a href="javascript:void(0)"><i class="bi bi-instagram"></i></a>
-                </div>
+                </aside>
             </div>
         </div>
-    </div>
-</footer>
-<!--footer ended  -->
-<!--return to top started-->
-<a class="return-to-top" href="javascript:void(0);"><i class="bi bi-arrow-up"></i></a>
-<!--return to top ended-->
-<!-- Start Options -->
-<!-- End Options -->
-<!--  JavaScripts  -->
-<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
-<!--  Bootstrap Js  -->
-<script src="{% static 'js/bootstrap.js' %}"></script>
-<!--  Typed Js  -->
-<script src="{% static 'js/typed.js' %}"></script>
-<!--  CountTo Js  -->
-<script src="{% static 'js/jquery.countTo.js' %}"></script>
-<!--  Isotope Js  -->
-<script src="{% static 'js/isotope.package.js' %}"></script>
-<!--  PopUp Js  -->
-<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-<!--  owl.carousel Js  -->
-<script src="{% static 'js/owl.carousel.min.js' %}"></script>
-<!--  easing Js  -->
-<script src="{% static 'js/jquery-easing-min.js' %}"></script>
-<!--  Custom JS  -->
-<script src="{% static 'js/custom.js' %}"></script>
-</body>
-</html>
+    </section>
+    <script>
+        function setValue(id) {
+            document.getElementById('parent_id').value = id;
+        }
+    </script>
+{% endblock %}

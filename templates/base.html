@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'includes/header_references.html' %}
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+
+</head>
+<body data-bs-spy="scroll" data-bs-target="#scrollspy" data-bs-offset="70">
+<!--preloader-->
+{% include 'includes/loader.html' %}
+<header id="header" class="header">
+    <nav id="scrollspy" class="navbar navbar-expand-lg">
+        <div class="container">
+            <h1 class="navbar-brand">
+                <img src="{% static 'img/logo.png' %}" alt="/">
+            </h1>
+
+            {% block nav_bar %}
+
+            {% endblock %}
+
+            <div class="social-icons d-none d-lg-block">
+                <ul class=" list-inline ml-lg-auto">
+                    <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)"><i class="bi bi-whatsapp"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+{% block content %}
+
+{% endblock %}
+
+{% include 'includes/footer.html' %}
+<!--return to top ended-->
+<!-- Start Options -->
+<!-- End Options -->
+<!--  JavaScripts  -->
+{% include 'includes/js_files.html' %}
+</body>
+</html>
