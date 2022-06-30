@@ -1,0 +1,11 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block title %}مدیریت سایت علی شعیبی{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">مدیریت وبسایت</a></h1>
+{% endblock %}
+
+{% block extrastyle %} <link rel="stylesheet" type="text/css" href="{% static 'css/override.css' %}" /> {% endblock %}
+
+{% block nav-global %}{% endblock %}
