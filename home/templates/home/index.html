@@ -142,8 +142,10 @@
                         <p>{{ about_me.text }}</p>
                     </div>
                     <ul class="about-list list-inline">
-                        <li><i class="bi bi-check-circle"></i><a style="color: black" href="{% url 'books:all_books' %}"> کتاب ها </a></li>
-                        <li><i class="bi bi-check-circle"></i><a style="color: black" href="{% url 'blog:all_articles' %}"> مقالات </a></li>
+                        <li><i class="bi bi-check-circle"></i><a style="color: black"
+                                                                 href="{% url 'books:all_books' %}"> کتاب ها </a></li>
+                        <li><i class="bi bi-check-circle"></i><a style="color: black"
+                                                                 href="{% url 'blog:all_articles' %}"> مقالات </a></li>
                     </ul>
                 </div>
             </div>
@@ -381,37 +383,37 @@
 <!--blog ended-->
 <!--video started-->
 {% if video %}
-<section id="video" class="video py-5">
-    <div class="container">
-        <div class="title-box">
-            <div class="row">
-                <div class="col-12">
-                    <h4>{{ video.title }}</h4>
-                </div>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-lg-8">
-                <div class="video-box">
-                    <div class="video-img">
-                        <img src="{{ video.image.url }}" alt="">
+    <section id="video" class="video py-5">
+        <div class="container">
+            <div class="title-box">
+                <div class="row">
+                    <div class="col-12">
+                        <h4>{{ video.title }}</h4>
                     </div>
-                    <a href="{{ video.url }}"
-                       class="popup-vimeo js-zoom-video">
-                        <div class="video-box-btn">
-                            <i class="bi bi-play-fill"></i>
-                        </div>
-                    </a>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="video-text">
-                    <p>{{ video.description }}</p>
+            <div class="row text-center">
+                <div class="col-lg-8">
+                    <div class="video-box">
+                        <div class="video-img">
+                            <img src="{{ video.image.url }}" alt="">
+                        </div>
+                        <a href="{{ video.url }}"
+                           class="popup-vimeo js-zoom-video">
+                            <div class="video-box-btn">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="video-text">
+                        <p>{{ video.description }}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endif %}
 <!--video ended-->
 <!-- Contact Started -->
@@ -421,7 +423,7 @@
             <div class="title-box">
                 <div class="row">
                     <div class="col-12">
-                        <h4>چگونه با ما ارتباط برقرار کنیم؟</h4>
+                        <h4>ارتباط با ما</h4>
                     </div>
                 </div>
             </div>
@@ -431,34 +433,33 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <form>
+                <form method="post">
+                    {% csrf_token %}
                     <div class="contact-form">
                         <div class="col-12">
                             <div class="form-group">
                                 <label class="d-block">
-                                    <input class="form-control" type="text" placeholder="*نام">
+                                    {{ form.name }}
                                 </label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label class="d-block">
-                                    <input class="form-control" placeholder="*ایمیل">
+                                    {{ form.email }}
                                 </label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label class="d-block">
-                                    <textarea class="form-control" placeholder="پیام شما..." cols="5" rows="5"
-                                              style="height: 145px"></textarea>
+                                    {{ form.text }}
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div class="pill-buttons">
-                        <a href="javascript:void(0)" id="submit-btn" onclick="sendEmail()" class="pill-button">ارسال
-                            پیام</a>
+                        <button type="submit" id="submit-btn" class="pill-button">ارسال پیام</button>
                     </div>
                     <div id="message" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
                          data-delay="4000">

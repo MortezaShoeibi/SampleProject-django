@@ -90,7 +90,7 @@ class ContactUs(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return f' شما یک پیام از طرف {self.name} دارید '
 
     class Meta:
         verbose_name = 'پیام'

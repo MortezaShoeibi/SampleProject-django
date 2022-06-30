@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import *
 from blog.models import *
 from books.models import *
+from .forms import *
 
 
 def home(request):
@@ -13,6 +14,14 @@ def home(request):
     activities = CulturalActivity.objects.order_by('-title')
     articles = Article.objects.order_by('-created_at')
     video = Video.objects.last()
+    form_class = ContactUsForm
+    form = form_class(request.POST or None)
+    if request.method == 'POST':
+        form = ContactUsForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            form = ContactUsForm()
     return render(request, 'home/index.html', {
         'foreword': foreword,
         'about_me': about_me,
@@ -22,4 +31,5 @@ def home(request):
         'activities': activities,
         'articles': articles,
         'video': video,
+        'form': form,
     })
