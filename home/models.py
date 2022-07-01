@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Foreword(models.Model):
-    image = models.ImageField(upload_to='welcome/images', verbose_name='تصویر')
+    image = models.ImageField(upload_to='images/welcome', verbose_name='تصویر')
     name = models.CharField(max_length=200, verbose_name='نام')
     welcome = models.CharField(max_length=400, verbose_name='متن خوش آمد گویی')
     description = models.TextField(verbose_name='توضیحات')
@@ -16,7 +16,7 @@ class Foreword(models.Model):
 
 
 class AboutMe(models.Model):
-    image = models.ImageField(upload_to='about_me/images', verbose_name='تصویر')
+    image = models.ImageField(upload_to='images/about_me', verbose_name='تصویر')
     question = models.CharField(max_length=80, verbose_name='سوال')
     text = models.TextField(verbose_name='متن')
 
@@ -58,7 +58,7 @@ class Target(models.Model):
 class CulturalActivity(models.Model):
     title = models.CharField(max_length=150, verbose_name='تیتر')
     activity = models.TextField(verbose_name='فعالیت')
-    image = models.ImageField(upload_to='cultural/images', null=True, blank=True, verbose_name='تصویر')
+    image = models.ImageField(upload_to='images/cultural', null=True, blank=True, verbose_name='تصویر')
 
     def __str__(self):
         return f'{self.title}'

@@ -4,7 +4,7 @@ from tinymce import models as tiny_models
 
 
 class Article(models.Model):
-    image = models.ImageField(upload_to='articles/images', verbose_name='تصویر')
+    image = models.ImageField(upload_to='images/articles', verbose_name='تصویر')
     title = models.CharField(max_length=50, verbose_name='تیتر')
     body = tiny_models.HTMLField(verbose_name='متن')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ثبت')

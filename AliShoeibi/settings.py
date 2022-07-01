@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # packages
     'django_social_share',
     'tinymce',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

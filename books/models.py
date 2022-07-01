@@ -4,7 +4,7 @@ from tinymce import models as tiny_models
 
 
 class Book(models.Model):
-    image = models.ImageField(upload_to='books/images', verbose_name='تصویر')
+    image = models.ImageField(upload_to='images/books', verbose_name='تصویر')
     title = models.CharField(max_length=50, verbose_name='تیتر')
     body = tiny_models.HTMLField(verbose_name='متن')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ثبت')
