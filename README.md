@@ -1,5 +1,5 @@
 # alishoeibi-django-project
 
-# Note
+this is a django-project which includes multiple useful features that can be used for beginners.
 
-I have some mistakes in this project/repo, but I'm keeping it because I want to remember my mistakes:))
+this is a free software, feel free to copy, modify, fork and override.
