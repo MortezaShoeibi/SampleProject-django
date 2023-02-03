@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
 from .models import Article, Comment
 from django.core.paginator import Paginator
 
 
-def all_articles(request):
+def all_articles(request) -> HttpResponse:
     objects_list = Article.objects.order_by('-created_at')
     paginator = Paginator(objects_list, 6)
     page_num = request.GET.get('page')
@@ -11,7 +12,7 @@ def all_articles(request):
     return render(request, 'blog/all_articles.html', {'articles': articles})
 
 
-def article_details(request, pk):
+def article_details(request, pk) -> HttpResponse:
     article = get_object_or_404(Article, id=pk)
     recent_articles = Article.objects.order_by('-created_at')
     if request.method == 'POST':
@@ -23,7 +24,7 @@ def article_details(request, pk):
     return render(request, 'blog/article_details.html', {'article': article, 'recent_articles': recent_articles})
 
 
-def search(request):
+def search(request) -> HttpResponse:
     q = request.GET.get('q')
     articles = Article.objects.filter(title__icontains=q)
     paginator = Paginator(articles, 6)

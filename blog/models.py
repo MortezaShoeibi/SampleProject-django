@@ -9,10 +9,10 @@ class Article(models.Model):
     body = tiny_models.HTMLField(verbose_name='متن')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ثبت')
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'-{self.title}'
 
-    def get_absolute_url(self):
+    def get_absolute_url(self) -> str:
         return reverse('blog:article_details', args=[self.id])
 
     class Meta:
@@ -29,7 +29,7 @@ class Comment(models.Model):
     email = models.EmailField(verbose_name='ایمیل')
     parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='replies', null=True, blank=True, verbose_name='کامنت والد')
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.name}: {self.body[:15]}...'
 
     class Meta:

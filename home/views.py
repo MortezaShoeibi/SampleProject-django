@@ -1,11 +1,12 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from .models import *
 from blog.models import *
 from books.models import *
 from .forms import *
 
 
-def home(request):
+def home(request) -> HttpResponse:
     foreword = Foreword.objects.last()
     about_me = AboutMe.objects.last()
     count_up = CountUp.objects.last()
