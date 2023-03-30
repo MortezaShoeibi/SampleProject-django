@@ -1,6 +1,6 @@
 # alishoeibi-django-project
 
-This is a django-project which includes multiple useful features that can be used for education purposes and beginners.
+This is a django-project which includes multiple useful features that can be used for educational purposes and beginners.
 
 # Setup and run
 To run the project in development mode:
