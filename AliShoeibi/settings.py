@@ -39,12 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # my apps
+    # local apps
     'home.apps.HomeConfig',
     'blog.apps.BlogConfig',
     'books.apps.BooksConfig',
 
-    # packages
+    # third party packages
     'django_social_share',
     'tinymce',
     'django_cleanup.apps.CleanupConfig',
@@ -74,7 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # my processors
+                # local processors
                 'context_processors.context_processors.socials',
             ],
         },
