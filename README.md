@@ -37,7 +37,7 @@ python3 ./manage.py runserver
 ```
 The project will be running on this address: `127.0.0.1:8000` add it to your browser search path and you will be able to see your own version of the project running locally.
 
-To add content to your Sweater you need to get into the admin panel, for this follow these steps below:
+To add content to the site you need to get into the admin panel, for this follow these steps below:
 - Create a super user:
 ```bash
 python3 ./manage.py createsuperuser
