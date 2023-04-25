@@ -1,4 +1,4 @@
-# alishoeibi-django-project
+# SampleProject-django
 
 This is a django-project which includes multiple useful features that can be used for educational purposes and beginners.
 
@@ -9,7 +9,7 @@ To run the project in development mode:
 
 - Clone and cd to the project:
 ```bash
-git clone https://github.com/MortezaShoeibi/alishoeibi-project-django.git && cd alishoeibi-project-django/
+git clone https://github.com/MortezaShoeibi/SampleProject-django.git && cd SampleProject-django/
 ```
 - Create and activate a virtual environment: 
 ```bash
